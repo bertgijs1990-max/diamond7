@@ -1,0 +1,3140 @@
+<!DOCTYPE html>
+<html lang="nl" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAISON D'OR — Salon Privé | Exclusief Monte Carlo VIP Casino</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            display: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            obsidian: {
+              950: '#040406',
+              900: '#090a0f',
+              850: '#0f1119',
+              800: '#151824',
+              700: '#1f2333',
+            },
+            gold: {
+              100: '#FFF8D6',
+              200: '#FFF2B2',
+              300: '#F3D26B',
+              400: '#D4AF37',
+              500: '#B58922',
+              600: '#996515',
+              700: '#6E470B',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --gold-metallic: linear-gradient(135deg, #996515 0%, #FFF2B2 24%, #D4AF37 48%, #FFF8D6 72%, #996515 100%);
+      --gold-btn-bg: linear-gradient(160deg, #FFF2B2 0%, #D4AF37 38%, #996515 80%, #D4AF37 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #040406;
+      background-image:
+        radial-gradient(ellipse at 50% -10%, rgba(212, 175, 55, 0.16) 0%, transparent 55%),
+        radial-gradient(circle at 8% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 92% 85%, rgba(190, 18, 60, 0.09) 0%, transparent 40%),
+        repeating-linear-gradient(45deg, rgba(255, 242, 178, 0.012) 0px, rgba(255, 242, 178, 0.012) 1px, transparent 1px, transparent 16px);
+      color: #F8F4E8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .gold-text {
+      background: var(--gold-metallic);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 2px 12px rgba(212, 175, 55, 0.22));
+    }
+
+    .gold-btn {
+      background: var(--gold-btn-bg);
+      color: #090806;
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 248, 214, 0.8),
+        0 8px 26px -4px rgba(212, 175, 55, 0.48),
+        0 2px 8px rgba(0, 0, 0, 0.85);
+      transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease, filter 0.18s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gold-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -75%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      transform: rotate(25deg);
+      transition: left 0.55s ease;
+      pointer-events: none;
+    }
+
+    .gold-btn:hover:not(:disabled)::after {
+      left: 135%;
+    }
+
+    .gold-btn:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow:
+        inset 0 0 0 1px #ffffff,
+        0 12px 32px -4px rgba(212, 175, 55, 0.7),
+        0 4px 12px rgba(0, 0, 0, 0.9);
+    }
+
+    .gold-btn:active:not(:disabled) {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .gold-btn:disabled {
+      filter: grayscale(0.55) brightness(0.6);
+      cursor: not-allowed;
+    }
+
+    /* Spin Round Button */
+    .spin-orb {
+      background: radial-gradient(circle at 32% 25%, #FFF8D6 0%, #D4AF37 45%, #8A5A10 88%, #593806 100%);
+      box-shadow:
+        inset 0 2px 6px rgba(255, 255, 255, 0.85),
+        inset 0 -4px 10px rgba(0, 0, 0, 0.55),
+        0 0 0 4px rgba(212, 175, 55, 0.28),
+        0 12px 35px rgba(212, 175, 55, 0.55);
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .spin-orb:hover:not(:disabled) {
+      transform: scale(1.05);
+      box-shadow:
+        inset 0 2px 8px #ffffff,
+        0 0 0 6px rgba(255, 242, 178, 0.42),
+        0 14px 42px rgba(212, 175, 55, 0.8);
+    }
+
+    .spin-orb:active:not(:disabled) {
+      transform: scale(0.96);
+    }
+
+    .spin-orb:disabled {
+      filter: grayscale(0.5) brightness(0.65);
+      cursor: not-allowed;
+    }
+
+    /* Luxury Cabinet Themes */
+    .cabinet-shell {
+      border-radius: 1.5rem;
+      box-shadow:
+        0 30px 80px -15px rgba(0, 0, 0, 0.95),
+        inset 0 0 0 1px rgba(255, 242, 178, 0.25),
+        0 0 65px -15px var(--cabinet-glow, rgba(212, 175, 55, 0.3));
+      transition: all 0.4s ease;
+    }
+
+    .cabinet-imperial {
+      --cabinet-glow: rgba(212, 175, 55, 0.38);
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.18), transparent 65%), linear-gradient(165deg, #17140d 0%, #070709 60%, #151109 100%);
+    }
+
+    .cabinet-obsidian {
+      --cabinet-glow: rgba(96, 165, 250, 0.28);
+      background: radial-gradient(circle at 50% 0%, rgba(148, 163, 184, 0.16), transparent 65%), linear-gradient(165deg, #0e131f 0%, #05070b 60%, #101522 100%);
+    }
+
+    .cabinet-emeraude {
+      --cabinet-glow: rgba(16, 185, 129, 0.36);
+      background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.22), transparent 65%), linear-gradient(165deg, #06251c 0%, #030d0a 60%, #062119 100%);
+    }
+
+    .cabinet-emeraude-freespins {
+      --cabinet-glow: rgba(255, 242, 178, 0.65);
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.32), transparent 70%), linear-gradient(165deg, #1f1907 0%, #061b14 55%, #1d1506 100%);
+    }
+
+    .cabinet-palais {
+      --cabinet-glow: rgba(225, 29, 72, 0.34);
+      background: radial-gradient(circle at 50% 0%, rgba(190, 18, 60, 0.24), transparent 65%), linear-gradient(165deg, #290812 0%, #0b0407 60%, #220710 100%);
+    }
+
+    /* Reel Stage & Cylinder Glass Shadows */
+    .slot-window {
+      background: linear-gradient(180deg, #020204 0%, #0b0d14 16%, #0d1019 84%, #020204 100%);
+      box-shadow:
+        inset 0 18px 28px -8px rgba(0, 0, 0, 0.96),
+        inset 0 -18px 28px -8px rgba(0, 0, 0, 0.96),
+        inset 0 0 0 1.5px rgba(212, 175, 55, 0.38);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slot-window::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.62) 0%,
+        rgba(255, 255, 255, 0.03) 18%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.02) 82%,
+        rgba(0, 0, 0, 0.65) 100%
+      );
+      z-index: 12;
+    }
+
+    .reel-col-viewport {
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(212, 175, 55, 0.02) 50%, rgba(255, 255, 255, 0.02) 100%);
+      border-left: 1px solid rgba(212, 175, 55, 0.14);
+      border-right: 1px solid rgba(212, 175, 55, 0.14);
+      border-radius: 0.85rem;
+    }
+
+    .reel-strip-track {
+      will-change: transform, filter;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reel-anticipation {
+      box-shadow: inset 0 0 26px rgba(255, 242, 178, 0.48), 0 0 20px rgba(212, 175, 55, 0.45);
+      border-color: #FFF2B2 !important;
+    }
+
+    /* Winning Cell Highlight & Paylines */
+    @keyframes goldCellPulse {
+      0%, 100% {
+        box-shadow: inset 0 0 0 2.5px #FFF2B2, 0 0 22px rgba(212, 175, 55, 0.75);
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.28) 0%, rgba(212, 175, 55, 0.05) 72%);
+      }
+      50% {
+        box-shadow: inset 0 0 0 3.5px #FFFFFF, 0 0 34px rgba(255, 248, 214, 0.95);
+        background: radial-gradient(circle, rgba(255, 242, 178, 0.38) 0%, rgba(212, 175, 55, 0.1) 75%);
+      }
+    }
+
+    .winning-symbol-box {
+      animation: goldCellPulse 1s ease-in-out infinite;
+      border-radius: 0.75rem;
+      z-index: 8;
+    }
+
+    @keyframes paylineLaser {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px #FFF2B2) drop-shadow(0 0 14px #D4AF37); }
+      50% { opacity: 0.65; filter: drop-shadow(0 0 3px #D4AF37); }
+    }
+
+    .svg-payline {
+      animation: paylineLaser 1s ease-in-out infinite;
+    }
+
+    @keyframes floatPopup {
+      0% { opacity: 0; transform: translate(-50%, 8px) scale(0.85); }
+      20% { opacity: 1; transform: translate(-50%, -4px) scale(1.04); }
+      80% { opacity: 1; transform: translate(-50%, -10px) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -18px) scale(0.95); }
+    }
+
+    .line-win-popup {
+      animation: floatPopup 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Expanding Wild Unfurl */
+    @keyframes expandWildBanner {
+      0% { transform: scaleY(0.25); opacity: 0.3; }
+      70% { transform: scaleY(1.03); opacity: 1; }
+      100% { transform: scaleY(1); opacity: 1; }
+    }
+
+    .expanding-wild-overlay {
+      transform-origin: center center;
+      animation: expandWildBanner 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Cascade Shatter & Drop Animations (Kast 3) */
+    @keyframes gemExplodeGold {
+      0% { transform: scale(1); filter: brightness(1.2); opacity: 1; }
+      45% { transform: scale(1.22) rotate(5deg); filter: brightness(2.5) drop-shadow(0 0 20px #FFF2B2); opacity: 0.95; }
+      100% { transform: scale(0.15) rotate(-14deg); filter: brightness(3); opacity: 0; }
+    }
+
+    .cascade-explode {
+      animation: gemExplodeGold 0.42s ease-in forwards;
+    }
+
+    /* Vault Pick Door Flip */
+    .vault-card {
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .vault-card:hover:not(:disabled) {
+      transform: translateY(-4px) scale(1.025);
+      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.35);
+      border-color: #FFF2B2;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #050508; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #D4AF37, #6E470B); border-radius: 999px; }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold-400 selection:text-obsidian-950">
+
+  <!-- FULLSCREEN GOLD COIN & CONFETTI FOUNTAIN CANVAS -->
+  <canvas id="coinFountainCanvas" class="fixed inset-0 pointer-events-none z-[90]"></canvas>
+
+  <!-- LUXURY STICKY TOPBAR -->
+  <header class="sticky top-0 z-40 border-b border-gold-400/30 bg-obsidian-950/92 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2.5">
+      
+      <!-- Brand & Back to Salon Lobby Button -->
+      <div class="flex items-center gap-2.5 sm:gap-3.5">
+        <button id="backToLobbyBtn" class="px-3 py-2 rounded-xl bg-obsidian-850 hover:bg-obsidian-800 border border-gold-400/40 hover:border-gold-200 text-gold-200 text-xs font-serif font-bold tracking-wider uppercase flex items-center gap-2 transition shadow-md">
+          <svg class="w-4 h-4 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linejoin="round"/>
+            <polyline points="9 22 9 12 15 12 15 22" stroke-linejoin="round"/>
+          </svg>
+          <span>Salon Lobby</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-obsidian-800 to-obsidian-950 border border-gold-400/50 flex items-center justify-center">
+            <svg class="w-6 h-6" viewBox="0 0 64 64" fill="none">
+              <path d="M10 46L6 20L20 30L32 12L44 30L58 20L54 46H10Z" stroke="#FFF2B2" stroke-width="3.2" fill="rgba(212,175,55,0.22)" stroke-linejoin="round"/>
+              <rect x="10" y="50" width="44" height="5" rx="2.5" fill="#D4AF37"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="font-serif text-sm lg:text-base font-extrabold tracking-[0.18em] gold-text leading-none">MAISON D'OR</h1>
+            <p class="font-display italic text-[11px] text-amber-100/65 tracking-wider">Salon Privé • Monte Carlo</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Progressive Jackpot Ticker -->
+      <div class="order-3 lg:order-2 w-full lg:w-auto flex justify-center">
+        <div class="w-full lg:w-auto px-4 sm:px-5 py-1.5 rounded-2xl bg-gradient-to-r from-obsidian-900 via-obsidian-800 to-obsidian-900 border border-gold-400/45 shadow-[0_0_25px_rgba(212,175,55,0.15)] flex items-center justify-between lg:justify-center gap-3.5">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-300"></span>
+            </span>
+            <span class="font-serif text-[10px] sm:text-xs tracking-[0.2em] text-gold-200 uppercase font-bold">Grand Salon Jackpot</span>
+          </div>
+          <span id="progressiveJackpotEl" class="font-serif font-black text-base sm:text-xl tracking-wider gold-text tabular-nums">€ 125.480,50</span>
+        </div>
+      </div>
+
+      <!-- Right VIP Balance + Caisse Privée + Audio Toggle -->
+      <div class="order-2 lg:order-3 flex items-center gap-2 sm:gap-2.5">
+        <div class="px-3 sm:px-3.5 py-1.5 rounded-xl bg-obsidian-900 border border-gold-400/40 flex items-center gap-3 shadow-inner">
+          <div>
+            <div class="text-[9px] uppercase tracking-[0.22em] text-amber-200/60 font-semibold">VIP Saldo</div>
+            <div id="vipBalanceEl" class="text-sm sm:text-base font-extrabold text-amber-50 tabular-nums">€ 5.000,00</div>
+          </div>
+          <button id="openCaisseBtn" class="px-2.5 sm:px-3 py-1.5 rounded-lg gold-btn text-[11px] sm:text-xs font-extrabold tracking-wide flex items-center gap-1">
+            <span>+</span>
+            <span>Caisse</span>
+          </button>
+        </div>
+
+        <button id="audioToggleBtn" aria-label="Geluid schakelen" class="w-10 h-10 rounded-xl bg-obsidian-900 border border-gold-400/35 hover:border-gold-200 text-gold-200 flex items-center justify-center transition">
+          <svg id="iconSoundOn" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke-linejoin="round"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke-linecap="round"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke-linecap="round"/>
+          </svg>
+          <svg id="iconSoundOff" class="w-5 h-5 hidden text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke-linejoin="round"/>
+            <line x1="23" y1="9" x2="17" y2="15" stroke-linecap="round"/>
+            <line x1="17" y1="9" x2="23" y2="15" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 pt-5 pb-14">
+
+    <!-- =====================================================================
+         VIEW 1: SALON PRIVÉ LOBBY (4 LUXURY SHOWCASE CABINETS)
+         ===================================================================== -->
+    <section id="lobbySection" class="space-y-7">
+      <div class="text-center max-w-3xl mx-auto pt-2 pb-1">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-gold-400/15 border border-gold-400/40 text-[10px] sm:text-xs font-serif tracking-[0.28em] text-gold-200 uppercase">Welkom in de Cercle d'Or</span>
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-black gold-text tracking-wider mt-3">KIES UW EXCLUSIEVE SALON KAST</h2>
+        <p class="font-display italic text-sm sm:text-lg text-amber-100/75 mt-2">
+          Vier meesterwerken met echte mechanische rol-animaties, 24-karaats illustraties en direct speelbare interactieve Bonus Games.
+        </p>
+      </div>
+
+      <div id="lobbyCardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+        <!-- Populated dynamically from MACHINES config -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         VIEW 2: ACTIVE SLOT MACHINE CABINET STAGE
+         ===================================================================== -->
+    <section id="gameSection" class="hidden space-y-4">
+
+      <!-- Quick Switcher Strip -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2" id="quickSwitchBar"></div>
+
+      <!-- Luxury Slot Cabinet Frame -->
+      <div id="cabinetShell" class="cabinet-shell cabinet-imperial p-3 sm:p-5 lg:p-6 border border-gold-400/45 relative">
+
+        <!-- Cabinet Header & Feature Telemetry -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3.5 mb-3.5 border-b border-gold-400/20">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span id="machineTaglineBadge" class="text-[10px] uppercase tracking-[0.22em] px-2.5 py-0.5 rounded-full bg-gold-400/15 border border-gold-400/40 text-gold-200 font-semibold">3×3 High-Roller</span>
+              <span id="machineLinesBadge" class="text-[10px] uppercase tracking-[0.2em] px-2.5 py-0.5 rounded-full bg-obsidian-950/80 border border-white/15 text-amber-100/80 font-semibold">5 Winlijnen</span>
+            </div>
+            <h2 id="machineTitleEl" class="font-serif text-xl sm:text-2xl lg:text-3xl font-black gold-text tracking-wider mt-1">L'IMPÉRIAL 777</h2>
+          </div>
+
+          <!-- Dynamic Multiplier Ladder / Jackpot Pills per Machine -->
+          <div id="machineFeatureHeader" class="flex flex-wrap items-center gap-1.5 sm:gap-2"></div>
+        </div>
+
+        <!-- REEL VIEWPORT CONTAINER -->
+        <div class="relative max-w-4xl mx-auto">
+          <div id="slotStageWindow" class="slot-window rounded-2xl p-2 sm:p-3.5 relative">
+            <!-- SVG Payline Laser Layer -->
+            <svg id="paylinesSvgLayer" class="absolute inset-0 w-full h-full pointer-events-none z-20" preserveAspectRatio="none"></svg>
+
+            <!-- Floating Win Line Popups Layer -->
+            <div id="linePopupsLayer" class="absolute inset-0 pointer-events-none z-30 overflow-hidden"></div>
+
+            <!-- Reels / Cascade Mount -->
+            <div id="reelsStageMount" class="relative z-10"></div>
+          </div>
+
+          <!-- Live Win & Status Ticker Bar -->
+          <div class="mt-3 px-4 py-2.5 rounded-xl bg-obsidian-950/90 border border-gold-400/30 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div id="gameStatusTicker" class="font-display italic text-sm sm:text-base text-amber-100/90 text-center sm:text-left">
+              Kies uw inzet of activeer direct de Bonus Game met Koop Bonus.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="text-[10px] uppercase tracking-[0.22em] text-amber-200/60 font-semibold">Winst Deze Draai</span>
+              <span id="spinWinDisplay" class="font-serif font-extrabold text-lg sm:text-xl gold-text tabular-nums">€ 0,00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LUXURY CONTROL DECK -->
+        <div class="mt-5 pt-4 border-t border-gold-400/25 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+          
+          <!-- Left: Bet Selector + Buy Bonus Button (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-2.5">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-amber-200/65 font-semibold">Inzet Per Draai</span>
+                <span id="activeBetLabel" class="text-xs font-extrabold text-gold-200 tabular-nums">€ 5,00</span>
+              </div>
+              <div id="betPillsRow" class="grid grid-cols-7 gap-1">
+                <!-- €1, €2, €5, €10, €25, €50, €100 -->
+              </div>
+            </div>
+
+            <!-- Prominent KOOP BONUS (50x) Button -->
+            <button id="buyBonusBtn" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500/25 via-gold-400/30 to-amber-500/25 hover:from-gold-400/40 hover:to-amber-400/40 border border-gold-300/75 shadow-[0_0_22px_rgba(212,175,55,0.28)] flex items-center justify-between transition group">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-gold-400 text-obsidian-950 font-serif font-black text-xs flex items-center justify-center">★</span>
+                <div class="text-left">
+                  <div class="font-serif font-extrabold text-xs text-gold-100 tracking-wider uppercase group-hover:text-white">KOOP BONUS GAME</div>
+                  <div id="buyBonusSubtitle" class="text-[10px] text-amber-200/75">Directe toegang (50× inzet)</div>
+                </div>
+              </div>
+              <span id="buyBonusCostEl" class="font-serif font-black text-sm text-gold-200 bg-obsidian-950/80 px-2.5 py-1 rounded-lg border border-gold-400/40 tabular-nums">€ 250,00</span>
+            </button>
+          </div>
+
+          <!-- Center: Giant Round Gold SPIN Button (3 cols) -->
+          <div class="lg:col-span-3 flex flex-col items-center justify-center order-first lg:order-none">
+            <button id="spinMainBtn" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full spin-orb flex flex-col items-center justify-center text-obsidian-950 group">
+              <svg id="spinBtnSvg" class="w-8 h-8 sm:w-9 sm:h-9 transition-transform duration-500 group-hover:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 12a9 9 0 1 1-2.64-6.36" stroke-linecap="round"/>
+                <polyline points="21 3 21 9 15 9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span id="spinBtnLabel" class="font-serif font-black text-xs sm:text-sm tracking-[0.2em] mt-0.5">SPIN</span>
+            </button>
+            <span class="text-[10px] text-amber-200/45 mt-1.5 hidden sm:inline">Of druk op Spatiebalk</span>
+          </div>
+
+          <!-- Right: Turbo, Autoplay (10/25/Stop) & Paytable Info (4 cols) -->
+          <div class="lg:col-span-4 flex flex-col gap-2">
+            <div class="grid grid-cols-2 gap-2">
+              <button id="turboToggleBtn" class="py-2.5 px-3 rounded-xl bg-obsidian-900/90 border border-gold-400/30 hover:border-gold-300 text-xs font-bold tracking-wider uppercase text-amber-100/85 flex items-center justify-center gap-1.5 transition">
+                <svg class="w-3.5 h-3.5 text-gold-300" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+                <span>Turbo</span>
+              </button>
+
+              <button id="paytableOpenBtn" class="py-2.5 px-3 rounded-xl bg-obsidian-900/90 border border-gold-400/40 hover:border-gold-200 text-xs font-bold tracking-wider uppercase text-gold-200 flex items-center justify-center gap-1.5 transition">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <span>Info &amp; Tabel</span>
+              </button>
+            </div>
+
+            <!-- Autoplay Controls -->
+            <div class="p-1.5 rounded-xl bg-obsidian-950/85 border border-gold-400/25 flex items-center justify-between gap-1.5">
+              <span class="text-[10px] uppercase tracking-widest text-amber-200/65 pl-2 font-semibold">Autoplay:</span>
+              <div class="flex items-center gap-1">
+                <button data-auto="10" class="auto-btn px-2.5 py-1.5 rounded-lg bg-obsidian-850 hover:bg-obsidian-800 border border-gold-400/25 text-xs font-bold text-amber-100 transition">10</button>
+                <button data-auto="25" class="auto-btn px-2.5 py-1.5 rounded-lg bg-obsidian-850 hover:bg-obsidian-800 border border-gold-400/25 text-xs font-bold text-amber-100 transition">25</button>
+                <button id="autoStopBtn" class="hidden px-3 py-1.5 rounded-lg bg-rose-600/80 hover:bg-rose-500 border border-rose-300 text-xs font-extrabold text-white transition">STOP (<span id="autoRemainingCount">0</span>)</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       BONUS GAME 1 OVERLAY: ROYAL HOLD & SPIN JACKPOT BONUS (L'IMPÉRIAL 777)
+       ========================================================================= -->
+  <div id="holdSpinModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/88 backdrop-blur-md p-3 sm:p-6">
+    <div class="max-w-xl w-full rounded-3xl bg-gradient-to-b from-obsidian-850 via-obsidian-900 to-obsidian-950 border-2 border-gold-300 p-5 sm:p-7 shadow-[0_0_90px_rgba(212,175,55,0.5)] relative">
+      <div class="text-center mb-4">
+        <span class="text-[10px] uppercase tracking-[0.3em] px-3 py-0.5 rounded-full bg-gold-400/20 border border-gold-300/50 text-gold-200 font-bold">L'Impérial 777 Bonus</span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-black gold-text mt-1">ROYAL HOLD &amp; SPIN</h3>
+        <p class="text-xs text-amber-100/75 mt-0.5">Elke nieuwe Gouden Munt blijft plakken en reset de teller naar 3 Respins. Vol veld = 2× Totale Bonus!</p>
+      </div>
+
+      <!-- Jackpot Tiers Bar -->
+      <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+        <div class="p-2 rounded-xl bg-emerald-950/60 border border-emerald-400/40">
+          <div class="text-[10px] uppercase tracking-widest text-emerald-300 font-bold">MINI (30×)</div>
+          <div id="hsMiniVal" class="font-serif font-extrabold text-sm text-white tabular-nums">€ 150,00</div>
+        </div>
+        <div class="p-2 rounded-xl bg-rose-950/60 border border-rose-400/40">
+          <div class="text-[10px] uppercase tracking-widest text-rose-300 font-bold">MAJOR (100×)</div>
+          <div id="hsMajorVal" class="font-serif font-extrabold text-sm text-white tabular-nums">€ 500,00</div>
+        </div>
+        <div class="p-2 rounded-xl bg-amber-950/70 border border-gold-300">
+          <div class="text-[10px] uppercase tracking-widest text-gold-200 font-bold">GRAND (500×)</div>
+          <div id="hsGrandVal" class="font-serif font-extrabold text-sm gold-text tabular-nums">€ 2.500,00</div>
+        </div>
+      </div>
+
+      <!-- 3x3 Golden Vault Coin Grid -->
+      <div id="holdSpinGrid" class="grid grid-cols-3 gap-2.5 sm:gap-3 p-3 rounded-2xl bg-obsidian-950 border border-gold-400/40 mb-4"></div>
+
+      <!-- Telemetry & Spin Trigger -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-gold-400/25">
+        <div class="flex items-center gap-4">
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-amber-200/60">Respins Over</div>
+            <div id="hsRespinsLeft" class="font-serif text-2xl font-black text-gold-200">3</div>
+          </div>
+          <div class="h-8 w-px bg-gold-400/25"></div>
+          <div>
+            <div class="text-[10px] uppercase tracking-widest text-amber-200/60">Verzamelde Buit</div>
+            <div id="hsTotalPot" class="font-serif text-xl font-black gold-text tabular-nums">€ 0,00</div>
+          </div>
+        </div>
+
+        <button id="hsSpinActionBtn" class="w-full sm:w-auto px-7 py-3.5 rounded-xl gold-btn font-serif font-black text-sm tracking-[0.18em] uppercase">
+          START RESPIN
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       BONUS GAME 2 OVERLAY: DE GOUDEN KLUIS KRAAK (OBSIDIAN VAULT PICK & CLICK)
+       ========================================================================= -->
+  <div id="vaultPickModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/88 backdrop-blur-md p-3 sm:p-6">
+    <div class="max-w-3xl w-full rounded-3xl bg-gradient-to-b from-obsidian-850 via-obsidian-900 to-obsidian-950 border-2 border-gold-300 p-5 sm:p-7 shadow-[0_0_90px_rgba(96,165,250,0.35)] relative">
+      <div class="text-center mb-4">
+        <span class="text-[10px] uppercase tracking-[0.3em] px-3 py-0.5 rounded-full bg-blue-500/20 border border-blue-300/40 text-blue-200 font-bold">Obsidian Vault Bonus</span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-black gold-text mt-1">DE GOUDEN KLUIS KRAAK</h3>
+        <p class="text-xs sm:text-sm text-amber-100/75 mt-0.5">Kraak de gepantserde VIP-kluizen voor directe geldprijzen, <strong class="text-sky-300">+2× Diamant Multipliers</strong> of de <strong class="text-emerald-300">Master Key</strong>. Pas op: bij 2 Laser Alarmen sluit de kluiskamer!</p>
+      </div>
+
+      <!-- Status Telemetry -->
+      <div class="grid grid-cols-3 gap-2.5 mb-4 text-center">
+        <div class="p-2.5 rounded-xl bg-obsidian-950 border border-gold-400/35">
+          <div class="text-[10px] uppercase tracking-widest text-amber-200/65">Basis Kluisbuit</div>
+          <div id="vpBaseCashEl" class="font-serif text-lg sm:text-xl font-black text-white tabular-nums">€ 0,00</div>
+        </div>
+        <div class="p-2.5 rounded-xl bg-obsidian-950 border border-sky-400/45">
+          <div class="text-[10px] uppercase tracking-widest text-sky-300">Totale Multiplier</div>
+          <div id="vpMultiplierEl" class="font-serif text-lg sm:text-xl font-black text-sky-200 tabular-nums">×1</div>
+        </div>
+        <div class="p-2.5 rounded-xl bg-obsidian-950 border border-rose-500/45">
+          <div class="text-[10px] uppercase tracking-widest text-rose-300">Laser Alarmen</div>
+          <div id="vpAlarmsEl" class="font-serif text-lg sm:text-xl font-black text-rose-400">0 / 2</div>
+        </div>
+      </div>
+
+      <!-- 12 Armored Vaults Grid -->
+      <div id="vaultPickGrid" class="grid grid-cols-3 sm:grid-cols-4 gap-2.5 sm:gap-3 mb-4"></div>
+
+      <div class="flex items-center justify-between pt-3 border-t border-gold-400/25">
+        <span id="vpStatusNote" class="font-display italic text-sm text-amber-100/85">Klik op een gesloten gouden kluis om deze te kraken...</span>
+        <div class="text-right">
+          <span class="text-[10px] uppercase tracking-widest text-amber-200/60 block">Totale Waarde</span>
+          <span id="vpTotalWinEl" class="font-serif text-xl font-black gold-text tabular-nums">€ 0,00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       BONUS GAME 4 OVERLAY: LE GRAND ROUE D'OR (2-RING MONTE CARLO WHEEL)
+       ========================================================================= -->
+  <div id="wheelBonusModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-md p-3 sm:p-6">
+    <div class="max-w-2xl w-full rounded-3xl bg-gradient-to-b from-obsidian-850 via-obsidian-900 to-obsidian-950 border-2 border-gold-300 p-5 sm:p-7 shadow-[0_0_100px_rgba(225,29,72,0.45)] flex flex-col items-center relative">
+      <span class="text-[10px] uppercase tracking-[0.3em] px-3 py-0.5 rounded-full bg-rose-500/20 border border-rose-300/50 text-rose-200 font-bold">Grand Palais Monte Carlo</span>
+      <h3 class="font-serif text-2xl sm:text-3xl font-black gold-text mt-1 text-center">LE GRAND ROUE D'OR</h3>
+      <p id="wheelRingStatusText" class="text-xs sm:text-sm text-amber-100/80 text-center mt-1 mb-3">
+        RING I ACTIEF — Draai een directe Multiplier of land op <strong class="text-gold-200">➔ BINNENRING</strong> voor Mega Multipliers &amp; de Grand Salon Jackpot!
+      </p>
+
+      <!-- Dual Ring HTML5 Canvas + Animated Top Flapper -->
+      <div class="relative w-72 h-72 sm:w-96 sm:h-96 flex items-center justify-center my-1">
+        <div id="wheelFlapperEl" class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 origin-top transition-transform duration-75 drop-shadow-[0_6px_12px_rgba(0,0,0,0.95)]">
+          <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none">
+            <path d="M24 44L9 10H39L24 44Z" fill="#FFF2B2" stroke="#996515" stroke-width="3"/>
+            <circle cx="24" cy="14" r="5" fill="#E11D48" stroke="#FFF" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <canvas id="grandRoueCanvas" width="460" height="460" class="w-full h-full rounded-full shadow-[0_0_55px_rgba(212,175,55,0.4)]"></canvas>
+      </div>
+
+      <button id="wheelSpinTriggerBtn" class="mt-4 px-10 py-4 rounded-2xl gold-btn font-serif font-black text-base sm:text-lg tracking-[0.2em] uppercase">
+        DRAAI HET RAD
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SENSATIONAL / MEGA / BIG WIN CELEBRATION OVERLAY
+       ========================================================================= -->
+  <div id="celebrationWinModal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+    <div class="max-w-md w-full rounded-3xl p-7 text-center bg-gradient-to-b from-obsidian-800 via-obsidian-900 to-obsidian-950 border-2 border-gold-200 shadow-[0_0_110px_rgba(212,175,55,0.85)]">
+      <div id="winTierBadge" class="inline-block px-4 py-1 rounded-full bg-gold-400/25 border border-gold-200 text-xs font-serif font-bold tracking-[0.3em] text-gold-100 uppercase mb-2">
+        BIG WIN
+      </div>
+      <h3 id="winHeadlineEl" class="font-serif text-3xl sm:text-4xl font-black gold-text tracking-wider mb-1">MAGNIFIQUE!</h3>
+      <p id="winSubtextEl" class="font-display italic text-sm sm:text-base text-amber-100/80 mb-4">Uitbetaling uit de Salon Privé</p>
+      <div id="winRollupAmount" class="font-serif text-3xl sm:text-5xl font-black text-white drop-shadow-[0_4px_24px_rgba(255,242,178,0.8)] tabular-nums mb-6">
+        € 0,00
+      </div>
+      <button id="collectWinModalBtn" class="px-9 py-3.5 rounded-xl gold-btn font-serif font-black tracking-[0.2em] text-sm uppercase">
+        INCASSEER WINST
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CAISSE PRIVÉE (FREE VIP CHIPS RELOAD MODAL)
+       ========================================================================= -->
+  <div id="caisseModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/82 backdrop-blur-md p-4">
+    <div class="max-w-lg w-full rounded-3xl bg-obsidian-900 border border-gold-400/50 p-6 sm:p-7 shadow-2xl relative">
+      <button id="closeCaisseBtn" class="absolute top-4 right-4 w-9 h-9 rounded-lg bg-obsidian-800 border border-gold-400/30 text-amber-100 hover:text-gold-200 flex items-center justify-center">✕</button>
+      <span class="text-[10px] uppercase tracking-[0.26em] text-gold-300 font-semibold">Caisse Privée • Monte Carlo</span>
+      <h3 class="font-serif text-2xl font-bold gold-text mt-1">VIP Speelkrediet Opwaarderen</h3>
+      <p class="text-xs sm:text-sm text-amber-100/70 mt-1 mb-5">Haal kosteloos nieuwe VIP-plaquettes op uit de Salon kluis om direct verder te spelen.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+        <button data-chip="1000" class="caisse-chip-btn p-4 rounded-2xl bg-obsidian-850 hover:bg-obsidian-800 border border-gold-400/35 hover:border-gold-200 text-center transition group">
+          <div class="text-[10px] uppercase tracking-widest text-amber-200/65">Ivoire Jeton</div>
+          <div class="font-serif text-lg font-extrabold text-gold-200 mt-1 group-hover:scale-105 transition">+ € 1.000</div>
+        </button>
+        <button data-chip="5000" class="caisse-chip-btn p-4 rounded-2xl bg-obsidian-850 hover:bg-obsidian-800 border border-gold-400/55 hover:border-gold-200 text-center transition group">
+          <div class="text-[10px] uppercase tracking-widest text-gold-300">Or 24K Plaquette</div>
+          <div class="font-serif text-lg font-extrabold gold-text mt-1 group-hover:scale-105 transition">+ € 5.000</div>
+        </button>
+        <button data-chip="25000" class="caisse-chip-btn p-4 rounded-2xl bg-gradient-to-b from-gold-500/20 to-obsidian-850 border border-gold-300 text-center transition group">
+          <div class="text-[10px] uppercase tracking-widest text-amber-100">Impérial Krediet</div>
+          <div class="font-serif text-lg font-extrabold gold-text mt-1 group-hover:scale-105 transition">+ € 25.000</div>
+        </button>
+      </div>
+
+      <div id="caisseToast" class="hidden text-center py-2 px-3 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-xs font-semibold"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAYTABLE & SYMBOL GUIDE MODAL
+       ========================================================================= -->
+  <div id="paytableModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/84 backdrop-blur-md p-4">
+    <div class="max-w-3xl w-full max-h-[88vh] overflow-y-auto rounded-3xl bg-obsidian-900 border border-gold-400/50 p-6 sm:p-7 shadow-2xl relative">
+      <button id="closePaytableBtn" class="sticky top-0 float-right w-9 h-9 rounded-lg bg-obsidian-800 border border-gold-400/30 text-amber-100 hover:text-gold-200 flex items-center justify-center z-10">✕</button>
+      <span class="text-[10px] uppercase tracking-[0.26em] text-gold-300 font-semibold">Règlement &amp; Uitbetalingen</span>
+      <h3 id="ptModalTitle" class="font-serif text-2xl font-bold gold-text mt-1">Uitbetalingstabel</h3>
+      <p id="ptModalDesc" class="text-xs sm:text-sm text-amber-100/75 mt-1 mb-5"></p>
+
+      <div id="ptBonusFeatureBox" class="p-4 rounded-2xl bg-gradient-to-r from-gold-500/15 via-obsidian-850 to-gold-500/10 border border-gold-400/45 mb-5 text-xs sm:text-sm text-amber-100/90 space-y-1.5"></div>
+
+      <h4 class="font-serif text-sm uppercase tracking-[0.2em] text-gold-200 mb-3">Symboolwaarden (op huidige inzet)</h4>
+      <div id="ptSymbolsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       1. BESPOKE 24K GOLD & GEMSTONE SVG ILLUSTRATIONS (ZERO EMOJIS!)
+       ========================================================================== */
+    const SYMBOLS = {
+      wild_crown: {
+        id: 'wild_crown',
+        name: 'Diamanten Kroon (WILD)',
+        isWild: true,
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_4px_12px_rgba(255,242,178,0.55)]">
+          <defs>
+            <linearGradient id="wg1" x1="0" y1="0" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFF8D6"/><stop offset="45%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#7C530D"/>
+            </linearGradient>
+          </defs>
+          <path d="M14 58L9 25L29 39L45 14L61 39L81 25L76 58H14Z" fill="url(#wg1)" stroke="#FFF8D6" stroke-width="2.2" stroke-linejoin="round"/>
+          <rect x="14" y="61" width="62" height="11" rx="4" fill="#141418" stroke="#FFF2B2" stroke-width="1.8"/>
+          <text x="45" y="69.5" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="9.5" fill="#FFF2B2" letter-spacing="1.5">WILD</text>
+          <polygon points="45,28 51,38 45,48 39,38" fill="#E0F2FE" stroke="#FFFFFF" stroke-width="1.4"/>
+          <circle cx="26" cy="48" r="4" fill="#E11D48" stroke="#FFF" stroke-width="1"/>
+          <circle cx="64" cy="48" r="4" fill="#10B981" stroke="#FFF" stroke-width="1"/>
+          <circle cx="45" cy="11" r="4" fill="#FFF8D6"/>
+        </svg>`
+      },
+
+      gold_777: {
+        id: 'gold_777',
+        name: 'Keizerlijke 777 Goud',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_4px_12px_rgba(225,29,72,0.5)]">
+          <defs>
+            <linearGradient id="r777" x1="0" y1="10" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFF8D6"/><stop offset="35%" stop-color="#F3D26B"/><stop offset="100%" stop-color="#996515"/>
+            </linearGradient>
+            <linearGradient id="c777" x1="0" y1="10" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FDA4AF"/><stop offset="45%" stop-color="#E11D48"/><stop offset="100%" stop-color="#881337"/>
+            </linearGradient>
+          </defs>
+          <text x="9" y="59" font-family="Cinzel,serif" font-weight="900" font-size="38" fill="url(#r777)" stroke="#784B08" stroke-width="1.5">7</text>
+          <text x="53" y="59" font-family="Cinzel,serif" font-weight="900" font-size="38" fill="url(#r777)" stroke="#784B08" stroke-width="1.5">7</text>
+          <text x="29" y="68" font-family="Cinzel,serif" font-weight="900" font-size="50" fill="url(#c777)" stroke="#FFF2B2" stroke-width="2.2">7</text>
+        </svg>`
+      },
+
+      gold_bars: {
+        id: 'gold_bars',
+        name: '24K Goudstaven',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_4px_10px_rgba(212,175,55,0.45)]">
+          <defs>
+            <linearGradient id="gb1" x1="10" y1="20" x2="80" y2="75" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFF8D6"/><stop offset="50%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#85530C"/>
+            </linearGradient>
+          </defs>
+          <polygon points="10,66 21,48 53,48 62,66" fill="url(#gb1)" stroke="#FFF2B2" stroke-width="1.6"/>
+          <polygon points="28,66 39,48 71,48 80,66" fill="url(#gb1)" stroke="#FFF2B2" stroke-width="1.6"/>
+          <polygon points="21,46 32,27 61,27 71,46" fill="url(#gb1)" stroke="#FFFFFF" stroke-width="2"/>
+          <text x="37" y="40" font-family="sans-serif" font-weight="800" font-size="8.5" fill="#5E3A06">999.9</text>
+        </svg>`
+      },
+
+      chrono_watch: {
+        id: 'chrono_watch',
+        name: 'Gouden Tourbillon Horloge',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_4px_10px_rgba(212,175,55,0.4)]">
+          <rect x="34" y="8" width="22" height="74" rx="5" fill="#996515" stroke="#FFF2B2" stroke-width="1.8"/>
+          <line x1="34" y1="18" x2="56" y2="18" stroke="#FFF2B2" stroke-width="1.4"/>
+          <line x1="34" y1="72" x2="56" y2="72" stroke="#FFF2B2" stroke-width="1.4"/>
+          <circle cx="45" cy="45" r="24" fill="#071318" stroke="#FFF2B2" stroke-width="4" stroke-dasharray="3.5 1.5"/>
+          <circle cx="45" cy="45" r="19" fill="#06281E" stroke="#D4AF37" stroke-width="1.2"/>
+          <line x1="45" y1="45" x2="45" y2="30" stroke="#FFF8D6" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="45" y1="45" x2="57" y2="49" stroke="#F3D26B" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="45" cy="45" r="3" fill="#FFF8D6"/>
+        </svg>`
+      },
+
+      champagne_crystal: {
+        id: 'champagne_crystal',
+        name: 'Kristallen Champagne',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16">
+          <rect x="33" y="12" width="11" height="15" rx="2.5" fill="#FFF2B2" stroke="#996515" stroke-width="1.5"/>
+          <path d="M27 40C27 30 33 27 33 27H44C44 27 50 30 50 40V72C50 75 48 77 45 77H32C29 77 27 75 27 72V40Z" fill="#064E3B" stroke="#F3D26B" stroke-width="2.2"/>
+          <polygon points="38.5,45 45,53 38.5,61 32,53" fill="#FFF2B2" stroke="#996515" stroke-width="1"/>
+          <path d="M58 36H70L68 53C67.2 57 60.8 57 60 53L58 36Z" fill="rgba(255,242,178,0.72)" stroke="#FFF8D6" stroke-width="1.6"/>
+          <line x1="64" y1="56" x2="64" y2="74" stroke="#FFF2B2" stroke-width="2"/>
+          <line x1="58" y1="74" x2="70" y2="74" stroke="#FFF2B2" stroke-width="2.2"/>
+        </svg>`
+      },
+
+      supercar_gt: {
+        id: 'supercar_gt',
+        name: 'Monte Carlo V12 Coupé',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_4px_10px_rgba(225,29,72,0.45)]">
+          <defs>
+            <linearGradient id="carG" x1="8" y1="30" x2="82" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FB7185"/><stop offset="50%" stop-color="#E11D48"/><stop offset="100%" stop-color="#881337"/>
+            </linearGradient>
+          </defs>
+          <path d="M9 54L19 39C24 33 34 31 48 31L64 38L80 43C83 45 83 54 80 56H9V54Z" fill="url(#carG)" stroke="#FFF2B2" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M27 39L41 34H55L62 40H27Z" fill="#0F172A" stroke="#F3D26B" stroke-width="1"/>
+          <circle cx="25" cy="56" r="8.5" fill="#090A0F" stroke="#FFF2B2" stroke-width="2.5"/>
+          <circle cx="25" cy="56" r="3" fill="#D4AF37"/>
+          <circle cx="66" cy="56" r="8.5" fill="#090A0F" stroke="#FFF2B2" stroke-width="2.5"/>
+          <circle cx="66" cy="56" r="3" fill="#D4AF37"/>
+        </svg>`
+      },
+
+      casino_chips: {
+        id: 'casino_chips',
+        name: 'Salon Privé Jetons',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16">
+          <circle cx="38" cy="48" r="24" fill="#1E293B" stroke="#F3D26B" stroke-width="3.5" stroke-dasharray="7 4"/>
+          <circle cx="50" cy="40" r="25" fill="#881337" stroke="#FFF2B2" stroke-width="4" stroke-dasharray="8 4.5"/>
+          <circle cx="50" cy="40" r="17" fill="#4C0519" stroke="#D4AF37" stroke-width="1.6"/>
+          <text x="50" y="44" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="11.5" fill="#FFF2B2">VIP</text>
+        </svg>`
+      },
+
+      diamond_solitaire: {
+        id: 'diamond_solitaire',
+        name: 'Keizerlijke Diamant',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_14px_rgba(186,230,253,0.65)]">
+          <polygon points="26,18 64,18 80,36 45,76 10,36" fill="#E0F2FE" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+          <polygon points="30,18 60,18 45,76" fill="#7DD3FC" opacity="0.55"/>
+          <polygon points="10,36 80,36 45,46" fill="#FFFFFF" opacity="0.65"/>
+          <line x1="26" y1="18" x2="32" y2="36" stroke="#FFF" stroke-width="1.6"/>
+          <line x1="64" y1="18" x2="58" y2="36" stroke="#FFF" stroke-width="1.6"/>
+        </svg>`
+      },
+
+      emerald_gem: {
+        id: 'emerald_gem',
+        name: 'Colombian Smaragd',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_12px_rgba(16,185,129,0.55)]">
+          <polygon points="27,13 63,13 76,27 76,63 63,77 27,77 14,63 14,27" fill="#047857" stroke="#FFF2B2" stroke-width="2.4"/>
+          <rect x="27" y="25" width="36" height="40" rx="2" fill="#10B981" stroke="#A7F3D0" stroke-width="1.8"/>
+          <polygon points="27,25 63,25 54,35 36,35" fill="#6EE7B7" opacity="0.6"/>
+        </svg>`
+      },
+
+      ruby_gem: {
+        id: 'ruby_gem',
+        name: 'Birmese Kroon-Robijn',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_12px_rgba(244,63,94,0.55)]">
+          <polygon points="45,12 75,32 66,73 24,73 15,32" fill="#9F1239" stroke="#FFF2B2" stroke-width="2.4"/>
+          <polygon points="45,23 63,36 57,63 33,63 27,36" fill="#E11D48" stroke="#FECDD3" stroke-width="1.6"/>
+          <circle cx="38" cy="34" r="4" fill="#FFE4E6" opacity="0.8"/>
+        </svg>`
+      },
+
+      sapphire_gem: {
+        id: 'sapphire_gem',
+        name: 'Koninklijke Saffier',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_12px_rgba(59,130,246,0.55)]">
+          <polygon points="45,11 74,45 45,79 16,45" fill="#1D4ED8" stroke="#FFF2B2" stroke-width="2.4"/>
+          <polygon points="45,23 62,45 45,67 28,45" fill="#3B82F6" stroke="#BFDBFE" stroke-width="1.6"/>
+        </svg>`
+      },
+
+      amethyst_gem: {
+        id: 'amethyst_gem',
+        name: 'Hertogelijke Amethist',
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16">
+          <polygon points="45,13 73,29 73,61 45,77 17,61 17,29" fill="#6D28D9" stroke="#F3D26B" stroke-width="2.2"/>
+          <circle cx="45" cy="45" r="16" fill="#8B5CF6" stroke="#EDE9FE" stroke-width="1.6"/>
+        </svg>`
+      },
+
+      // --- BONUS / SCATTER SYMBOLS FOR THE 4 MACHINES ---
+      coin_bonus: {
+        id: 'coin_bonus',
+        name: '24K Keizersmunt (BONUS)',
+        isBonus: true,
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_16px_rgba(255,242,178,0.8)]">
+          <defs>
+            <radialGradient id="coinR" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#FFF8D6"/><stop offset="55%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#784B08"/>
+            </radialGradient>
+          </defs>
+          <circle cx="45" cy="45" r="33" fill="url(#coinR)" stroke="#FFFFFF" stroke-width="2.5"/>
+          <circle cx="45" cy="45" r="26" fill="none" stroke="#6E470B" stroke-width="1.8" stroke-dasharray="4 3"/>
+          <text x="45" y="42" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="11" fill="#2A1903">ROYAL</text>
+          <text x="45" y="55" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="10" fill="#451A03">BONUS</text>
+        </svg>`
+      },
+
+      vault_scatter: {
+        id: 'vault_scatter',
+        name: 'Gouden Kluisdeur (BONUS)',
+        isBonus: true,
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_16px_rgba(96,165,250,0.65)]">
+          <rect x="13" y="13" width="64" height="64" rx="14" fill="#1E293B" stroke="#FFF2B2" stroke-width="3"/>
+          <circle cx="45" cy="45" r="20" fill="#0F172A" stroke="#D4AF37" stroke-width="2.5"/>
+          <line x1="45" y1="25" x2="45" y2="65" stroke="#FFF2B2" stroke-width="2.5"/>
+          <line x1="25" y1="45" x2="65" y2="45" stroke="#FFF2B2" stroke-width="2.5"/>
+          <circle cx="45" cy="45" r="7" fill="#38BDF8" stroke="#FFF" stroke-width="1.6"/>
+          <rect x="23" y="65" width="44" height="11" rx="3" fill="#D4AF37"/>
+          <text x="45" y="73" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="8.5" fill="#090A0F">BONUS</text>
+        </svg>`
+      },
+
+      royal_crest: {
+        id: 'royal_crest',
+        name: 'Smaragd Kroonzegel (FREE SPINS)',
+        isBonus: true,
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_16px_rgba(52,211,153,0.75)]">
+          <polygon points="45,8 78,26 70,68 45,82 20,68 12,26" fill="#064E3B" stroke="#FFF2B2" stroke-width="3"/>
+          <polygon points="45,19 63,43 45,62 27,43" fill="#10B981" stroke="#FFF8D6" stroke-width="2"/>
+          <rect x="17" y="62" width="56" height="12" rx="4" fill="#FFF2B2"/>
+          <text x="45" y="70.5" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="8.2" fill="#052E16">SPINS</text>
+        </svg>`
+      },
+
+      wheel_bonus: {
+        id: 'wheel_bonus',
+        name: 'Roue d\'Or Rad (BONUS)',
+        isBonus: true,
+        svg: `<svg viewBox="0 0 90 90" class="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-[0_0_16px_rgba(251,113,133,0.75)]">
+          <circle cx="45" cy="45" r="32" fill="#881337" stroke="#FFF2B2" stroke-width="3.5"/>
+          <circle cx="45" cy="45" r="22" fill="#064E3B" stroke="#D4AF37" stroke-width="2.2" stroke-dasharray="7 4"/>
+          <line x1="45" y1="13" x2="45" y2="77" stroke="#FFF2B2" stroke-width="2"/>
+          <line x1="13" y1="45" x2="77" y2="45" stroke="#FFF2B2" stroke-width="2"/>
+          <line x1="22" y1="22" x2="68" y2="68" stroke="#FFF2B2" stroke-width="1.6"/>
+          <line x1="68" y1="22" x2="22" y2="68" stroke="#FFF2B2" stroke-width="1.6"/>
+          <circle cx="45" cy="45" r="8" fill="#FFF2B2" stroke="#996515" stroke-width="2"/>
+          <rect x="22" y="67" width="46" height="11" rx="3.5" fill="#FFF2B2"/>
+          <text x="45" y="75" text-anchor="middle" font-family="Cinzel,serif" font-weight="900" font-size="8.5" fill="#4C0519">RAD</text>
+        </svg>`
+      }
+    };
+
+    /* ==========================================================================
+       2. WEB AUDIO API LUXURY SOUND ENGINE (MECHANICAL CLICKS, BELLS, FANFARES)
+       ========================================================================== */
+    class MaisonAudio {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+
+      ensure() {
+        if (!this.ctx) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (AC) this.ctx = new AC();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      tone(freq, type = 'sine', dur = 0.12, vol = 0.08, delay = 0, slideTo = null) {
+        if (!this.enabled) return;
+        this.ensure();
+        if (!this.ctx) return;
+
+        const t0 = this.ctx.currentTime + delay;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, t0);
+        if (slideTo) {
+          osc.frequency.exponentialRampToValueAtTime(slideTo, t0 + dur);
+        }
+
+        gain.gain.setValueAtTime(0.0001, t0);
+        gain.gain.exponentialRampToValueAtTime(vol, t0 + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(t0);
+        osc.stop(t0 + dur + 0.02);
+      }
+
+      spinStart() {
+        this.tone(240, 'triangle', 0.09, 0.07, 0, 380);
+        this.tone(420, 'sine', 0.12, 0.06, 0.05, 580);
+      }
+
+      reelTick() {
+        this.tone(720 + Math.random() * 160, 'triangle', 0.028, 0.022, 0);
+      }
+
+      reelStopThud(colIndex = 0, hasBonus = false) {
+        // Heavy luxury mechanical thud + brass lock
+        const f = 110 + colIndex * 14;
+        this.tone(f, 'triangle', 0.13, 0.14, 0, 62);
+        this.tone(f * 2.5, 'sine', 0.06, 0.045, 0.01);
+        if (hasBonus) {
+          // Rising bell chime on scatter/bonus symbol land
+          const bellFreq = 660 + colIndex * 140;
+          this.tone(bellFreq, 'sine', 0.35, 0.11, 0.02);
+          this.tone(bellFreq * 1.5, 'triangle', 0.25, 0.06, 0.05);
+        }
+      }
+
+      cascadeBell(step = 0) {
+        const scale = [523.25, 587.33, 659.25, 783.99, 987.77, 1174.66, 1318.51];
+        const f = scale[Math.min(step, scale.length - 1)];
+        this.tone(f, 'sine', 0.32, 0.11, 0);
+        this.tone(f * 2, 'sine', 0.24, 0.05, 0.04);
+      }
+
+      lineWinChime() {
+        [523.25, 659.25, 783.99, 1046.5].forEach((n, i) => {
+          this.tone(n, 'sine', 0.28, 0.08, i * 0.055);
+        });
+      }
+
+      bonusTriggerFanfare() {
+        const notes = [440, 554.37, 659.25, 880, 1108.73, 1318.51];
+        notes.forEach((n, i) => {
+          this.tone(n, 'triangle', 0.42, 0.1, i * 0.075);
+          this.tone(n * 0.5, 'sine', 0.42, 0.07, i * 0.075);
+        });
+      }
+
+      bigWinFanfare() {
+        const chord = [523.25, 659.25, 783.99, 1046.5, 1318.51, 1567.98, 2093.0];
+        chord.forEach((n, i) => {
+          this.tone(n, 'sine', 0.65, 0.1, i * 0.07);
+          this.tone(n * 0.5, 'triangle', 0.5, 0.06, i * 0.07);
+        });
+      }
+
+      wheelPinRattle() {
+        this.tone(1180 + Math.random() * 120, 'triangle', 0.025, 0.065, 0, 620);
+      }
+
+      vaultOpenSound(isAlarm = false) {
+        if (isAlarm) {
+          this.tone(240, 'sawtooth', 0.25, 0.09, 0, 150);
+          this.tone(190, 'sawtooth', 0.3, 0.09, 0.18, 120);
+        } else {
+          this.tone(587.33, 'sine', 0.22, 0.09, 0);
+          this.tone(880, 'sine', 0.3, 0.1, 0.06);
+        }
+      }
+    }
+
+    const sfx = new MaisonAudio();
+
+    /* ==========================================================================
+       3. THE 4 LUXURY SLOT MACHINES & PAYLINES CONFIGURATION
+       ========================================================================== */
+    const PAYLINES_5 = [
+      [1, 1, 1], // Lijn 1: Midden
+      [0, 0, 0], // Lijn 2: Boven
+      [2, 2, 2], // Lijn 3: Onder
+      [0, 1, 2], // Lijn 4: Diagonaal ↘
+      [2, 1, 0]  // Lijn 5: Diagonaal ↗
+    ];
+
+    const PAYLINES_10 = [
+      [1, 1, 1, 1, 1], // 1
+      [0, 0, 0, 0, 0], // 2
+      [2, 2, 2, 2, 2], // 3
+      [0, 1, 2, 1, 0], // 4
+      [2, 1, 0, 1, 2], // 5
+      [0, 0, 1, 2, 2], // 6
+      [2, 2, 1, 0, 0], // 7
+      [1, 0, 0, 0, 1], // 8
+      [1, 2, 2, 2, 1], // 9
+      [0, 1, 1, 1, 0]  // 10
+    ];
+
+    const PAYLINES_20_5X4 = [
+      [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [0, 0, 0, 0, 0], [3, 3, 3, 3, 3],
+      [0, 1, 2, 1, 0], [3, 2, 1, 2, 3], [1, 0, 0, 0, 1], [2, 3, 3, 3, 2],
+      [0, 0, 1, 2, 3], [3, 3, 2, 1, 0], [1, 2, 3, 2, 1], [2, 1, 0, 1, 2],
+      [0, 1, 1, 1, 0], [3, 2, 2, 2, 3], [1, 1, 0, 1, 1], [2, 2, 3, 2, 2],
+      [0, 2, 0, 2, 0], [3, 1, 3, 1, 3], [1, 2, 1, 2, 1], [2, 1, 2, 1, 2]
+    ];
+
+    const MACHINES = {
+      imperial: {
+        id: 'imperial',
+        roman: 'I',
+        title: "L'IMPÉRIAL 777",
+        subtitle: '3×3 High-Roller Classic • Stacked Wilds',
+        linesLabel: '5 Winlijnen',
+        bonusName: 'Royal Hold & Spin Jackpot Bonus',
+        cabinetClass: 'cabinet-imperial',
+        accentBadge: 'bg-amber-500/20 text-gold-200 border-gold-400/40',
+        mode: 'reels',
+        cols: 3,
+        rows: 3,
+        paylines: PAYLINES_5,
+        bonusSymbol: 'coin_bonus',
+        bonusNeed: 3,
+        symbols: ['wild_crown', 'gold_777', 'gold_bars', 'chrono_watch', 'champagne_crystal', 'emerald_gem', 'coin_bonus'],
+        weights: [10, 14, 18, 20, 24, 26, 18], // Elevated fun bonus frequency!
+        // Multipliers of total bet for 3-of-a-kind across 5 lines
+        paytable: {
+          wild_crown: { 3: 18 },
+          gold_777: { 3: 12 },
+          gold_bars: { 3: 7 },
+          chrono_watch: { 3: 5 },
+          champagne_crystal: { 3: 3.5 },
+          emerald_gem: { 3: 2 },
+          coin_bonus: { 3: 2 }
+        },
+        lobbyDesc: '24-karaats High-Roller klassieker met Stacked Kroon-Wilds en de spannende Royal Hold & Spin Kluis met MINI, MAJOR en GRAND Jackpots (500×)!',
+        rulesHtml: `
+          <p>★ <strong>Stacked Wilds:</strong> De Diamanten Kroon vervangt elk symbool (behalve Bonus Munten) en kan gestapeld op een volledige rol landen.</p>
+          <p>★ <strong>Royal Hold &amp; Spin Bonus (3× Keizersmunt of Koop Bonus):</strong> U start met 3 plakkende Gouden Munten en 3 Respins op een speciaal 3×3 kluisveld. Elke nieuwe munt (1× tot 25×, MINI 30×, MAJOR 100× of GRAND 500×) reset de respins naar 3. Een compleet gevuld veld verdubbelt (<strong>2×</strong>) de volledige bonusbuit!</p>
+        `
+      },
+
+      obsidian: {
+        id: 'obsidian',
+        roman: 'II',
+        title: 'OBSIDIAN VAULT',
+        subtitle: '5×3 Bankkluis VIP • Expanding Wilds',
+        linesLabel: '10 Winlijnen',
+        bonusName: 'De Gouden Kluis Kraak (Pick & Click)',
+        cabinetClass: 'cabinet-obsidian',
+        accentBadge: 'bg-sky-500/20 text-sky-200 border-sky-400/40',
+        mode: 'reels',
+        cols: 5,
+        rows: 3,
+        paylines: PAYLINES_10,
+        bonusSymbol: 'vault_scatter',
+        bonusNeed: 3,
+        symbols: ['wild_crown', 'diamond_solitaire', 'gold_bars', 'chrono_watch', 'sapphire_gem', 'casino_chips', 'vault_scatter'],
+        weights: [7, 11, 15, 18, 22, 25, 13],
+        paytable: {
+          wild_crown: { 3: 3, 4: 10, 5: 35 },
+          diamond_solitaire: { 3: 2.5, 4: 8, 5: 25 },
+          gold_bars: { 3: 1.8, 4: 5, 5: 15 },
+          chrono_watch: { 3: 1.2, 4: 3.5, 5: 10 },
+          sapphire_gem: { 3: 0.8, 4: 2.2, 5: 6.5 },
+          casino_chips: { 3: 0.5, 4: 1.5, 5: 4.5 },
+          vault_scatter: { 3: 2, 4: 8, 5: 25 }
+        },
+        lobbyDesc: 'Gepantserde VIP-bankkluis met Expanding Wilds op de middelste rollen en de interactieve Kluis Kraak Bonus met 12 gesloten gouden kluizen!',
+        rulesHtml: `
+          <p>★ <strong>Expanding Wilds (Rol 2, 3 &amp; 4):</strong> Wanneer een Diamanten Kroon op de middelste rollen landt, klapt deze verticaal open over de volledige rol voor maximale winlijnen!</p>
+          <p>★ <strong>De Gouden Kluis Kraak (3+ Kluisdeuren of Koop Bonus):</strong> Betreed de kluiskamer met 12 gepantserde kluizen. Klik zelf kluizen open voor directe cashprijzen, <strong>+2× Diamant Multipliers</strong> of de beschermende <strong>Master Key</strong> totdat er 2× een Laser Alarm afgaat.</p>
+        `
+      },
+
+      emeraude: {
+        id: 'emeraude',
+        roman: 'III',
+        title: 'ÉMERAUDE ROYALE',
+        subtitle: '5×4 Cascading Gems • Multiplier tot ×25',
+        linesLabel: '20 Winlijnen + Tumbling',
+        bonusName: '10 Royal Free Spins (Sticky Multiplier)',
+        cabinetClass: 'cabinet-emeraude',
+        accentBadge: 'bg-emerald-500/20 text-emerald-200 border-emerald-400/40',
+        mode: 'cascade',
+        cols: 5,
+        rows: 4,
+        paylines: PAYLINES_20_5X4,
+        bonusSymbol: 'royal_crest',
+        bonusNeed: 3,
+        baseLadder: [1, 2, 3, 5, 10],
+        freeSpinsLadder: [1, 2, 4, 6, 10, 15, 25],
+        symbols: ['wild_crown', 'emerald_gem', 'diamond_solitaire', 'ruby_gem', 'sapphire_gem', 'amethyst_gem', 'royal_crest'],
+        weights: [7, 13, 15, 18, 22, 24, 11],
+        paytable: {
+          wild_crown: { 3: 2, 4: 6, 5: 20 },
+          emerald_gem: { 3: 1.5, 4: 4.5, 5: 14 },
+          diamond_solitaire: { 3: 1.1, 4: 3.2, 5: 10 },
+          ruby_gem: { 3: 0.8, 4: 2.2, 5: 7 },
+          sapphire_gem: { 3: 0.5, 4: 1.5, 5: 4.5 },
+          amethyst_gem: { 3: 0.4, 4: 1.1, 5: 3.2 },
+          royal_crest: { 3: 2, 4: 6, 5: 20 }
+        },
+        lobbyDesc: 'Spectaculaire 5×4 edelstenenkast waarbij winnende stenen uiteenspatten en nieuwe stenen naar beneden vallen met oplopende Multipliers (tot ×25 in Free Spins)!',
+        rulesHtml: `
+          <p>★ <strong>Cascading / Tumbling Reels:</strong> Winnende combinaties op de 20 winlijnen spatten in goudstof uiteen; bovenliggende juwelen vallen omlaag en de Multiplier-balk stijgt (×1 → ×2 → ×3 → ×5 → ×10).</p>
+          <p>★ <strong>10 Royal Free Spins (3+ Kroonzegels of Koop Bonus):</strong> Tijdens de 10 gratis spins zakt de Multiplier <strong>NOOIT</strong> terug tussen spins, maar klimt hij bij elke cascade verder omhoog: <strong>×1 → ×2 → ×4 → ×6 → ×10 → ×15 → ×25!</strong></p>
+        `
+      },
+
+      palais: {
+        id: 'palais',
+        roman: 'IV',
+        title: 'GRAND PALAIS MONTE CARLO',
+        subtitle: '5×3 Casino & Supercar Luxury • Dubbel Rad',
+        linesLabel: '10 Winlijnen',
+        bonusName: "Le Grand Roue d'Or (2-Ringen Fortuinrad)",
+        cabinetClass: 'cabinet-palais',
+        accentBadge: 'bg-rose-500/20 text-rose-200 border-rose-400/40',
+        mode: 'reels',
+        cols: 5,
+        rows: 3,
+        paylines: PAYLINES_10,
+        bonusSymbol: 'wheel_bonus',
+        bonusNeed: 3,
+        symbols: ['wild_crown', 'supercar_gt', 'gold_777', 'chrono_watch', 'champagne_crystal', 'casino_chips', 'wheel_bonus'],
+        weights: [8, 12, 15, 18, 22, 24, 13],
+        paytable: {
+          wild_crown: { 3: 3.5, 4: 12, 5: 40 },
+          supercar_gt: { 3: 2.5, 4: 8, 5: 28 },
+          gold_777: { 3: 1.8, 4: 5.5, 5: 18 },
+          chrono_watch: { 3: 1.2, 4: 3.5, 5: 11 },
+          champagne_crystal: { 3: 0.8, 4: 2.2, 5: 7 },
+          casino_chips: { 3: 0.5, 4: 1.5, 5: 4.5 },
+          wheel_bonus: { 3: 2, 4: 8, 5: 25 }
+        },
+        lobbyDesc: 'De ultieme Monte Carlo ervaring met V12 Supercars en Le Grand Roue d\'Or: een echt draaiend HTML5 Fortuinrad met 2 ringen én de Grand Salon Jackpot!',
+        rulesHtml: `
+          <p>★ <strong>10 Luxe Winlijnen:</strong> Van links naar rechts met Diamanten Kroon Wilds en hoge uitbetalingen op V12 Supercars en 777 symbolen.</p>
+          <p>★ <strong>Le Grand Roue d'Or (3+ Rad-symbolen of Koop Bonus):</strong> Draai zelf het grote Monte Carlo Fortuinrad met ratelende gouden pinnen! Land op een pijl (<strong>➔ RING II</strong>) om door te stoten naar de gouden binnenring met 25×–150× multipliers en de live <strong>GRAND SALON PROGRESSIVE JACKPOT</strong>!</p>
+        `
+      }
+    };
+
+    /* ==========================================================================
+       4. PERSISTENT VIP STATE & ANIMATED CURRENCY COUNTERS
+       ========================================================================== */
+    const STORAGE_BAL_KEY = 'maisondor_salon_balance_v2';
+    const STORAGE_JP_KEY = 'maisondor_salon_jackpot_v2';
+    const BET_OPTIONS = [1, 2, 5, 10, 25, 50, 100];
+
+    const state = {
+      view: 'lobby', // 'lobby' | 'game'
+      machineId: 'imperial',
+      balance: 5000.00,
+      displayedBalance: 5000.00,
+      grandJackpot: 125480.50,
+      bet: 5,
+      busy: false, // Master lock preventing double-spins or navigation glitches
+      turbo: false,
+      autoplayLeft: 0,
+      grid: [], // [col][row] current visible symbols
+      cascadeStep: 0,
+      inFreeSpins: false,
+      freeSpinsLeft: 0,
+      freeSpinsTotal: 10,
+      stickyMultiplierIdx: 0,
+      freeSpinsCumulativeWin: 0
+    };
+
+    try {
+      const sb = localStorage.getItem(STORAGE_BAL_KEY);
+      if (sb !== null && !isNaN(parseFloat(sb))) state.balance = Math.max(0, parseFloat(sb));
+      state.displayedBalance = state.balance;
+
+      const sj = localStorage.getItem(STORAGE_JP_KEY);
+      if (sj !== null && !isNaN(parseFloat(sj))) state.grandJackpot = Math.max(125480.50, parseFloat(sj));
+    } catch (e) {}
+
+    function persistEconomy() {
+      try {
+        localStorage.setItem(STORAGE_BAL_KEY, state.balance.toFixed(2));
+        localStorage.setItem(STORAGE_JP_KEY, state.grandJackpot.toFixed(2));
+      } catch (e) {}
+    }
+
+    const euroFmt = new Intl.NumberFormat('nl-NL', {
+      style: 'currency',
+      currency: 'EUR',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    function fmt(val) {
+      return euroFmt.format(val);
+    }
+
+    const wait = ms => new Promise(res => setTimeout(res, ms));
+
+    let balAnimRaf = null;
+    function syncBalanceUI(instant = false) {
+      persistEconomy();
+      const el = document.getElementById('vipBalanceEl');
+      if (instant) {
+        state.displayedBalance = state.balance;
+        el.textContent = fmt(state.balance);
+        return;
+      }
+      if (balAnimRaf) cancelAnimationFrame(balAnimRaf);
+      const startVal = state.displayedBalance;
+      const targetVal = state.balance;
+      const startTime = performance.now();
+      const dur = 480;
+
+      function step(now) {
+        const p = Math.min(1, (now - startTime) / dur);
+        const ease = 1 - Math.pow(1 - p, 3);
+        state.displayedBalance = startVal + (targetVal - startVal) * ease;
+        el.textContent = fmt(state.displayedBalance);
+        if (p < 1) {
+          balAnimRaf = requestAnimationFrame(step);
+        } else {
+          state.displayedBalance = targetVal;
+          el.textContent = fmt(targetVal);
+        }
+      }
+      balAnimRaf = requestAnimationFrame(step);
+    }
+
+    function setTicker(msg, highlight = false) {
+      const el = document.getElementById('gameStatusTicker');
+      el.textContent = msg;
+      el.className = highlight
+        ? 'font-display italic text-sm sm:text-base text-gold-200 font-semibold text-center sm:text-left'
+        : 'font-display italic text-sm sm:text-base text-amber-100/85 text-center sm:text-left';
+    }
+
+    function pickSymbol(machine, allowStackedWild = false) {
+      const total = machine.weights.reduce((a, b) => a + b, 0);
+      let r = Math.random() * total;
+      for (let i = 0; i < machine.symbols.length; i++) {
+        r -= machine.weights[i];
+        if (r <= 0) return machine.symbols[i];
+      }
+      return machine.symbols[0];
+    }
+
+    /* ==========================================================================
+       5. GOLD COINS & CONFETTI FOUNTAIN ENGINE (HTML5 CANVAS)
+       ========================================================================== */
+    const fountainCanvas = document.getElementById('coinFountainCanvas');
+    const fCtx = fountainCanvas.getContext('2d');
+    let coins = [];
+    let fountainRaf = null;
+
+    function resizeFountain() {
+      fountainCanvas.width = window.innerWidth;
+      fountainCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeFountain);
+    resizeFountain();
+
+    function burstGoldFountain(amount = 85) {
+      const cx = fountainCanvas.width / 2;
+      const cy = fountainCanvas.height * 0.72;
+      for (let i = 0; i < amount; i++) {
+        const angle = -Math.PI / 2 + (Math.random() - 0.5) * 1.35;
+        const speed = 9 + Math.random() * 13;
+        coins.push({
+          x: cx + (Math.random() - 0.5) * 160,
+          y: cy,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - Math.random() * 4,
+          size: 7 + Math.random() * 9,
+          rot: Math.random() * Math.PI * 2,
+          vRot: (Math.random() - 0.5) * 0.22,
+          isCoin: Math.random() > 0.3,
+          color: ['#FFF8D6', '#FFF2B2', '#D4AF37', '#F59E0B'][Math.floor(Math.random() * 4)],
+          alpha: 1
+        });
+      }
+      if (!fountainRaf) animateFountain();
+    }
+
+    function animateFountain() {
+      fCtx.clearRect(0, 0, fountainCanvas.width, fountainCanvas.height);
+      coins.forEach(c => {
+        c.x += c.vx;
+        c.y += c.vy;
+        c.vy += 0.34; // realistic fountain arc gravity
+        c.rot += c.vRot;
+        if (c.y > fountainCanvas.height - 50) c.alpha -= 0.04;
+
+        fCtx.save();
+        fCtx.globalAlpha = Math.max(0, c.alpha);
+        fCtx.translate(c.x, c.y);
+        fCtx.rotate(c.rot);
+
+        if (c.isCoin) {
+          fCtx.scale(Math.cos(c.rot * 2.2), 1);
+          fCtx.beginPath();
+          fCtx.arc(0, 0, c.size, 0, Math.PI * 2);
+          fCtx.fillStyle = c.color;
+          fCtx.fill();
+          fCtx.strokeStyle = '#996515';
+          fCtx.lineWidth = 1.8;
+          fCtx.stroke();
+        } else {
+          fCtx.fillStyle = c.color;
+          fCtx.fillRect(-c.size / 2, -c.size / 3, c.size, c.size * 0.6);
+        }
+        fCtx.restore();
+      });
+
+      coins = coins.filter(c => c.alpha > 0 && c.y < fountainCanvas.height + 60);
+      if (coins.length > 0) {
+        fountainRaf = requestAnimationFrame(animateFountain);
+      } else {
+        fountainRaf = null;
+        fCtx.clearRect(0, 0, fountainCanvas.width, fountainCanvas.height);
+      }
+    }
+
+    /* ==========================================================================
+       6. SALON LOBBY & NAVIGATION RENDERER
+       ========================================================================== */
+    function renderLobbyAndQuickBar() {
+      const lobbyGrid = document.getElementById('lobbyCardsGrid');
+      const quickBar = document.getElementById('quickSwitchBar');
+      lobbyGrid.innerHTML = '';
+      quickBar.innerHTML = '';
+
+      Object.values(MACHINES).forEach(m => {
+        const previewSyms = m.symbols.slice(0, 3).map(id => `<div class="w-12 h-12 flex items-center justify-center">${SYMBOLS[id].svg}</div>`).join('');
+        const bonusSymSvg = SYMBOLS[m.bonusSymbol].svg;
+
+        // 1. Luxury Lobby Card
+        const card = document.createElement('div');
+        card.className = `cabinet-shell ${m.cabinetClass} p-6 border border-gold-400/40 hover:border-gold-200 transition-all group flex flex-col justify-between cursor-pointer`;
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[10px] uppercase tracking-[0.22em] px-3 py-1 rounded-full border font-bold ${m.accentBadge}">${m.linesLabel}</span>
+              <span class="font-serif text-sm text-gold-300 tracking-widest">SALON ${m.roman}</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-black gold-text tracking-wider group-hover:scale-[1.01] transition origin-left">${m.title}</h3>
+            <p class="text-xs uppercase tracking-[0.18em] text-amber-200/70 font-semibold mt-0.5">${m.subtitle}</p>
+            <p class="text-xs sm:text-sm text-amber-100/80 mt-3 leading-relaxed">${m.lobbyDesc}</p>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-gold-400/20 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-1.5 bg-obsidian-950/75 px-3 py-2 rounded-xl border border-gold-400/25">
+              ${previewSyms}
+              <div class="w-px h-8 bg-gold-400/25 mx-1"></div>
+              <div class="w-12 h-12 flex items-center justify-center" title="Bonus Symbool">${bonusSymSvg}</div>
+            </div>
+            <button class="px-5 py-3 rounded-xl gold-btn font-serif font-black text-xs sm:text-sm tracking-[0.18em] uppercase shrink-0">
+              SPEEL KAST →
+            </button>
+          </div>
+        `;
+        card.addEventListener('click', () => enterMachine(m.id));
+        lobbyGrid.appendChild(card);
+
+        // 2. Quick Switcher Tab inside Game View
+        const tab = document.createElement('button');
+        tab.dataset.mid = m.id;
+        tab.className = 'quick-machine-tab text-left p-2.5 sm:p-3 rounded-xl bg-obsidian-900/90 border border-gold-400/25 hover:border-gold-300 transition flex items-center justify-between gap-2';
+        tab.innerHTML = `
+          <div class="min-w-0">
+            <div class="text-[9px] uppercase tracking-widest text-gold-300 font-bold">${m.linesLabel}</div>
+            <div class="font-serif font-extrabold text-xs sm:text-sm text-amber-50 truncate">${m.title}</div>
+          </div>
+          <span class="font-serif text-xs text-gold-400 shrink-0">${m.roman}</span>
+        `;
+        tab.addEventListener('click', () => {
+          if (!state.busy) enterMachine(m.id);
+        });
+        quickBar.appendChild(tab);
+      });
+    }
+
+    function showLobby() {
+      if (state.busy) return;
+      stopAutoplay();
+      state.view = 'lobby';
+      document.getElementById('lobbySection').classList.remove('hidden');
+      document.getElementById('gameSection').classList.add('hidden');
+    }
+
+    function enterMachine(machineId) {
+      if (state.busy) return;
+      stopAutoplay();
+      state.view = 'game';
+      state.machineId = machineId;
+      state.cascadeStep = 0;
+      state.inFreeSpins = false;
+
+      document.getElementById('lobbySection').classList.add('hidden');
+      document.getElementById('gameSection').classList.remove('hidden');
+
+      const m = MACHINES[machineId];
+      document.getElementById('cabinetShell').className = `cabinet-shell ${m.cabinetClass} p-3 sm:p-5 lg:p-6 border border-gold-400/45 relative`;
+      document.getElementById('machineTitleEl').textContent = m.title;
+      document.getElementById('machineTaglineBadge').textContent = m.subtitle;
+      document.getElementById('machineLinesBadge').textContent = m.linesLabel;
+      document.getElementById('buyBonusSubtitle').textContent = `${m.bonusName} (50×)`;
+
+      document.querySelectorAll('.quick-machine-tab').forEach(btn => {
+        const active = btn.dataset.mid === machineId;
+        btn.className = active
+          ? 'quick-machine-tab text-left p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-gold-400/25 to-obsidian-850 border border-gold-300 shadow-md flex items-center justify-between gap-2'
+          : 'quick-machine-tab text-left p-2.5 sm:p-3 rounded-xl bg-obsidian-900/85 border border-gold-400/20 hover:border-gold-300/60 transition flex items-center justify-between gap-2';
+      });
+
+      document.getElementById('spinWinDisplay').textContent = fmt(0);
+      updateBetUI();
+      renderMachineFeatureBar();
+      initFreshGrid(m);
+      mountStageGrid(m);
+      setTicker(`Welkom bij ${m.title}. Druk op SPIN of start direct ${m.bonusName}!`);
+      sfx.reelTick();
+    }
+
+    /* ==========================================================================
+       7. REEL STAGE MOUNTING & TRUE VERTICAL REEL-STRIP ENGINE
+       ========================================================================== */
+    function getCellHeightPx(rows) {
+      const isMobile = window.innerWidth < 640;
+      if (rows === 4) return isMobile ? 74 : 92;
+      return isMobile ? 88 : 112;
+    }
+
+    function initFreshGrid(machine) {
+      state.grid = [];
+      for (let c = 0; c < machine.cols; c++) {
+        const col = [];
+        for (let r = 0; r < machine.rows; r++) {
+          col.push(pickSymbol(machine));
+        }
+        state.grid.push(col);
+      }
+    }
+
+    function createSymbolCellHTML(symId, cellH) {
+      const sym = SYMBOLS[symId];
+      return `
+        <div class="w-full flex flex-col items-center justify-center shrink-0 px-1 relative" style="height:${cellH}px">
+          ${sym.svg}
+          <span class="text-[9px] sm:text-[10px] text-amber-100/60 font-medium tracking-wider truncate max-w-[92%] -mt-0.5">${sym.name.split(' (')[0]}</span>
+        </div>
+      `;
+    }
+
+    function mountStageGrid(machine) {
+      const mount = document.getElementById('reelsStageMount');
+      document.getElementById('paylinesSvgLayer').innerHTML = '';
+      document.getElementById('linePopupsLayer').innerHTML = '';
+      mount.innerHTML = '';
+
+      const cellH = getCellHeightPx(machine.rows);
+      const viewportH = cellH * machine.rows;
+      const colsClass = machine.cols === 5 ? 'grid-cols-5' : 'grid-cols-3';
+
+      const gridWrap = document.createElement('div');
+      gridWrap.id = 'columnsGridWrap';
+      gridWrap.className = `grid ${colsClass} gap-1.5 sm:gap-3`;
+
+      for (let c = 0; c < machine.cols; c++) {
+        const colViewport = document.createElement('div');
+        colViewport.id = `colViewport_${c}`;
+        colViewport.className = 'reel-col-viewport transition-shadow duration-300';
+        colViewport.style.height = `${viewportH}px`;
+
+        const track = document.createElement('div');
+        track.id = `reelTrack_${c}`;
+        track.className = 'reel-strip-track';
+
+        for (let r = 0; r < machine.rows; r++) {
+          const cellDiv = document.createElement('div');
+          cellDiv.id = `visibleCell_${c}_${r}`;
+          cellDiv.style.height = `${cellH}px`;
+          cellDiv.className = 'flex flex-col items-center justify-center relative transition-transform duration-300';
+          cellDiv.innerHTML = createSymbolCellHTML(state.grid[c][r], cellH);
+          track.appendChild(cellDiv);
+        }
+
+        colViewport.appendChild(track);
+        gridWrap.appendChild(colViewport);
+      }
+
+      mount.appendChild(gridWrap);
+    }
+
+    function renderMachineFeatureBar() {
+      const m = MACHINES[state.machineId];
+      const bar = document.getElementById('machineFeatureHeader');
+      bar.innerHTML = '';
+
+      if (m.id === 'imperial') {
+        bar.innerHTML = `
+          <span class="px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-400/40 text-[11px] font-serif font-bold text-emerald-200 tabular-nums">MINI ${fmt(state.bet * 30)}</span>
+          <span class="px-2.5 py-1 rounded-lg bg-rose-950/80 border border-rose-400/40 text-[11px] font-serif font-bold text-rose-200 tabular-nums">MAJOR ${fmt(state.bet * 100)}</span>
+          <span class="px-2.5 py-1 rounded-lg bg-amber-950/80 border border-gold-300 text-[11px] font-serif font-extrabold gold-text tabular-nums">GRAND ${fmt(state.bet * 500)}</span>
+        `;
+      } else if (m.id === 'obsidian') {
+        bar.innerHTML = `
+          <span class="px-3 py-1 rounded-xl bg-sky-950/70 border border-sky-400/40 text-xs text-sky-200 font-semibold">Expanding Wilds op Rol 2, 3 &amp; 4</span>
+          <span class="px-3 py-1 rounded-xl bg-gold-400/15 border border-gold-400/40 text-xs text-gold-200 font-semibold">3+ Kluizen = Kluis Kraak Bonus</span>
+        `;
+      } else if (m.id === 'emeraude') {
+        const ladder = state.inFreeSpins ? m.freeSpinsLadder : m.baseLadder;
+        const activeIdx = state.inFreeSpins ? state.stickyMultiplierIdx : state.cascadeStep;
+
+        if (state.inFreeSpins) {
+          const fsPill = document.createElement('span');
+          fsPill.className = 'px-3 py-1 rounded-xl bg-amber-400 text-obsidian-950 font-serif font-black text-xs shadow-lg mr-1';
+          fsPill.textContent = `ROYAL FREE SPIN ${state.freeSpinsTotal - state.freeSpinsLeft}/${state.freeSpinsTotal}`;
+          bar.appendChild(fsPill);
+        }
+
+        ladder.forEach((mult, idx) => {
+          const isCurr = idx === Math.min(activeIdx, ladder.length - 1);
+          const span = document.createElement('span');
+          span.className = isCurr
+            ? 'px-2.5 py-1 rounded-lg bg-gradient-to-r from-gold-200 to-gold-400 text-obsidian-950 font-serif font-black text-xs scale-105 shadow-[0_0_15px_rgba(255,242,178,0.75)] transition'
+            : 'px-2 py-1 rounded-lg bg-obsidian-950/80 border border-emerald-400/30 text-emerald-200/80 font-serif font-bold text-[11px] transition';
+          span.textContent = `×${mult}`;
+          bar.appendChild(span);
+        });
+      } else if (m.id === 'palais') {
+        bar.innerHTML = `
+          <span class="px-3 py-1 rounded-xl bg-rose-950/70 border border-rose-400/40 text-xs text-rose-200 font-semibold">3+ Rad Symbolen = Dubbel Fortuinrad + Jackpot Kans!</span>
+        `;
+      }
+    }
+
+    /**
+     * Generates target outcome grid for a spin (with optional forced 3+ Bonus symbols for Koop Bonus!)
+     */
+    function buildSpinOutcomeGrid(machine, forceBonus = false) {
+      const target = [];
+      for (let c = 0; c < machine.cols; c++) {
+        // Kast 1 Stacked Wild chance (18% chance a column gets 2 or 3 stacked wilds!)
+        if (machine.id === 'imperial' && !forceBonus && Math.random() < 0.18) {
+          const stackLen = Math.random() < 0.5 ? 3 : 2;
+          const col = [];
+          for (let r = 0; r < machine.rows; r++) {
+            col.push(r < stackLen ? 'wild_crown' : pickSymbol(machine));
+          }
+          target.push(col);
+          continue;
+        }
+
+        const col = [];
+        let hasBonusInCol = false;
+        for (let r = 0; r < machine.rows; r++) {
+          let s = pickSymbol(machine);
+          // Prevent multiple scatters in the exact same column for cleaner aesthetics
+          if (s === machine.bonusSymbol) {
+            if (hasBonusInCol) {
+              s = machine.symbols[2];
+            } else {
+              hasBonusInCol = true;
+            }
+          }
+          col.push(s);
+        }
+        target.push(col);
+      }
+
+      if (forceBonus) {
+        // Guarantee 3 Bonus symbols placed cleanly across distinct columns
+        const colIndices = Array.from({ length: machine.cols }, (_, i) => i).sort(() => Math.random() - 0.5).slice(0, 3);
+        colIndices.forEach(cIdx => {
+          // Clear any existing bonus in col first
+          for (let r = 0; r < machine.rows; r++) {
+            if (target[cIdx][r] === machine.bonusSymbol) target[cIdx][r] = machine.symbols[1];
+          }
+          const randRow = Math.floor(Math.random() * machine.rows);
+          target[cIdx][randRow] = machine.bonusSymbol;
+        });
+      }
+
+      return target;
+    }
+
+    /**
+     * TRUE VERTICAL SCROLLING REEL STRIP ANIMATION WITH MOTION BLUR, STAGGERED STOP & REEL BOUNCE
+     */
+    async function spinReelStrips(machine, targetGrid) {
+      document.getElementById('paylinesSvgLayer').innerHTML = '';
+      document.getElementById('linePopupsLayer').innerHTML = '';
+
+      const cellH = getCellHeightPx(machine.rows);
+      const isTurbo = state.turbo;
+      const promises = [];
+      let landedBonusSoFar = 0;
+
+      // Pre-count bonus symbols per column for dramatic anticipation glow
+      const colHasBonus = targetGrid.map(col => col.includes(machine.bonusSymbol));
+
+      for (let c = 0; c < machine.cols; c++) {
+        const track = document.getElementById(`reelTrack_${c}`);
+        const viewport = document.getElementById(`colViewport_${c}`);
+        viewport.classList.remove('reel-anticipation');
+
+        // Build vertical strip: [Target symbols at TOP (indices 0..rows-1)] + [Filler spinning symbols] + [Old visible symbols at BOTTOM]
+        // Starting at bottom (`translateY = -(stripSymbols.length - rows) * cellH`) and scrolling DOWNWARD toward `translateY = 0`!
+        const fillerCount = (isTurbo ? 10 : 18) + c * (isTurbo ? 3 : 6);
+        const stripSyms = [...targetGrid[c]];
+        for (let k = 0; k < fillerCount; k++) {
+          stripSyms.push(pickSymbol(machine));
+        }
+        stripSyms.push(...state.grid[c]);
+
+        track.innerHTML = stripSyms.map((sId, idx) => {
+          const idAttr = idx < machine.rows ? `id="visibleCell_${c}_${idx}"` : '';
+          return `<div ${idAttr} style="height:${cellH}px" class="flex flex-col items-center justify-center relative">${createSymbolCellHTML(sId, cellH)}</div>`;
+        }).join('');
+
+        const startOffset = -((stripSyms.length - machine.rows) * cellH);
+        track.style.transition = 'none';
+        track.style.transform = `translate3d(0, ${startOffset}px, 0)`;
+
+        // Duration staggered per column (+ extra suspense if 2 scatters may have landed)
+        const baseDur = isTurbo ? 420 : 880;
+        const colDelay = isTurbo ? c * 115 : c * 240;
+        const totalDur = baseDur + colDelay;
+
+        const colPromise = new Promise(resolve => {
+          const tStart = performance.now();
+          let lastTickRow = -1;
+
+          function stepReel(now) {
+            const elapsed = now - tStart;
+            const p = Math.min(1, elapsed / totalDur);
+
+            // Anticipation highlight on remaining reels if 2 bonus symbols already stopped
+            if (landedBonusSoFar >= 2 && p < 0.92) {
+              viewport.classList.add('reel-anticipation');
+            }
+
+            if (p < 1) {
+              // Back-in / cubic-out feel with realistic overshoot bounce at the end (p > 0.88)
+              let posProgress;
+              if (p < 0.88) {
+                const sp = p / 0.88;
+                // Smooth acceleration then steady high speed into deceleration
+                posProgress = sp < 0.15
+                  ? (sp / 0.15) * (sp / 0.15) * 0.12
+                  : 0.12 + ((sp - 0.15) / 0.85) * 0.88;
+              } else {
+                // Reel mechanical overshoot & bounce back to 0!
+                const bp = (p - 0.88) / 0.12;
+                const overshootPx = Math.sin(bp * Math.PI) * 16; // dips 16px past 0 then snaps cleanly to 0
+                const yVal = overshootPx;
+                track.style.filter = 'none';
+                track.style.transform = `translate3d(0, ${yVal}px, 0)`;
+                requestAnimationFrame(stepReel);
+                return;
+              }
+
+              const currentY = startOffset * (1 - posProgress);
+              const speedBlur = p > 0.1 && p < 0.82 ? (isTurbo ? 1.8 : 2.6) : 0;
+              track.style.filter = speedBlur > 0 ? `blur(${speedBlur}px)` : 'none';
+              track.style.transform = `translate3d(0, ${currentY}px, 0)`;
+
+              const rowPassed = Math.floor(Math.abs(currentY) / cellH);
+              if (rowPassed !== lastTickRow && c === machine.cols - 1) {
+                lastTickRow = rowPassed;
+                sfx.reelTick();
+              }
+
+              requestAnimationFrame(stepReel);
+            } else {
+              // Snap cleanly to final target symbols at top (0..rows-1) and trim filler DOM
+              track.style.filter = 'none';
+              track.style.transform = 'translate3d(0, 0px, 0)';
+              viewport.classList.remove('reel-anticipation');
+
+              if (colHasBonus[c]) landedBonusSoFar++;
+              sfx.reelStopThud(c, colHasBonus[c]);
+
+              // Keep only the visible target rows so coordinates & DOM stay ultra-clean
+              track.innerHTML = targetGrid[c].map((sId, rIdx) => `
+                <div id="visibleCell_${c}_${rIdx}" style="height:${cellH}px" class="flex flex-col items-center justify-center relative">
+                  ${createSymbolCellHTML(sId, cellH)}
+                </div>
+              `).join('');
+
+              resolve();
+            }
+          }
+
+          requestAnimationFrame(stepReel);
+        });
+
+        promises.push(colPromise);
+      }
+
+      await Promise.all(promises);
+      state.grid = targetGrid.map(col => [...col]);
+    }
+
+    /* ==========================================================================
+       8. PAYLINE EVALUATION, EXPANDING WILDS & FLOATING WIN POPUPS
+       ========================================================================== */
+    async function applyObsidianExpandingWilds(machine) {
+      if (machine.id !== 'obsidian') return;
+      const expandedCols = [];
+
+      // Middle reels are indices 1, 2, 3 (Rol 2, 3, 4)
+      for (let c = 1; c <= 3; c++) {
+        if (state.grid[c].includes('wild_crown')) {
+          expandedCols.push(c);
+          state.grid[c] = ['wild_crown', 'wild_crown', 'wild_crown'];
+        }
+      }
+
+      if (expandedCols.length === 0) return;
+
+      const cellH = getCellHeightPx(machine.rows);
+      expandedCols.forEach(c => {
+        const track = document.getElementById(`reelTrack_${c}`);
+        // Update cells + add golden Expanding Wild visual banner
+        track.innerHTML = [0, 1, 2].map(rIdx => `
+          <div id="visibleCell_${c}_${rIdx}" style="height:${cellH}px" class="flex flex-col items-center justify-center relative bg-gradient-to-b from-gold-400/25 via-gold-300/15 to-gold-400/25 expanding-wild-overlay">
+            ${createSymbolCellHTML('wild_crown', cellH)}
+          </div>
+        `).join('');
+      });
+
+      sfx.lineWinChime();
+      setTicker(`EXPANDING WILD! Diamanten Kroon klapt uit over ${expandedCols.length > 1 ? 'meerdere rollen' : 'de volledige rol'}!`, true);
+      await wait(state.turbo ? 280 : 520);
+    }
+
+    function evaluatePaylines(machine, multiplier = 1) {
+      let totalWin = 0;
+      const winningLines = [];
+      const winningCoords = [];
+
+      machine.paylines.forEach((lineRows, lineIdx) => {
+        const lineSyms = lineRows.map((r, c) => state.grid[c][r]);
+
+        // Determine base matching symbol from left
+        let matchSym = null;
+        for (let c = 0; c < machine.cols; c++) {
+          const s = lineSyms[c];
+          if (SYMBOLS[s].isBonus) break;
+          if (!SYMBOLS[s].isWild) {
+            matchSym = s;
+            break;
+          }
+        }
+        // All wilds on line
+        if (!matchSym && lineSyms[0] === 'wild_crown') {
+          matchSym = 'wild_crown';
+        }
+        if (!matchSym) return;
+
+        let count = 0;
+        const coords = [];
+        for (let c = 0; c < machine.cols; c++) {
+          const s = lineSyms[c];
+          if (s === matchSym || SYMBOLS[s].isWild) {
+            count++;
+            coords.push([c, lineRows[c]]);
+          } else {
+            break;
+          }
+        }
+
+        const payMap = machine.paytable[matchSym];
+        if (payMap && payMap[count]) {
+          const winAmount = state.bet * payMap[count] * multiplier;
+          totalWin += winAmount;
+          winningLines.push({
+            lineNumber: lineIdx + 1,
+            coords,
+            amount: winAmount,
+            symbolName: SYMBOLS[matchSym].name
+          });
+          winningCoords.push(...coords);
+        }
+      });
+
+      // Count Bonus / Scatter symbols anywhere in view
+      const bonusCoords = [];
+      for (let c = 0; c < machine.cols; c++) {
+        for (let r = 0; r < machine.rows; r++) {
+          if (state.grid[c][r] === machine.bonusSymbol) {
+            bonusCoords.push([c, r]);
+          }
+        }
+      }
+
+      if (bonusCoords.length >= machine.bonusNeed) {
+        const bPayMap = machine.paytable[machine.bonusSymbol];
+        const bCount = Math.min(machine.cols, bonusCoords.length);
+        const scatterWin = state.bet * ((bPayMap && bPayMap[bCount]) || 2) * multiplier;
+        totalWin += scatterWin;
+        winningCoords.push(...bonusCoords);
+      }
+
+      return {
+        totalWin,
+        winningLines,
+        winningCoords,
+        bonusCount: bonusCoords.length,
+        bonusCoords
+      };
+    }
+
+    function renderWinningPaylinesAndPopups(winningLines, winningCoords) {
+      // Highlight winning boxes
+      winningCoords.forEach(([c, r]) => {
+        const el = document.getElementById(`visibleCell_${c}_${r}`);
+        if (el) el.classList.add('winning-symbol-box');
+      });
+
+      const svg = document.getElementById('paylinesSvgLayer');
+      const popupsLayer = document.getElementById('linePopupsLayer');
+      const stageRect = svg.getBoundingClientRect();
+      if (!stageRect.width || !stageRect.height) return;
+
+      svg.setAttribute('viewBox', `0 0 ${stageRect.width} ${stageRect.height}`);
+      svg.innerHTML = '';
+      popupsLayer.innerHTML = '';
+
+      const palette = ['#FFF2B2', '#34D399', '#FBBF24', '#60A5FA', '#FB7185'];
+
+      winningLines.forEach((wl, idx) => {
+        const pts = wl.coords.map(([c, r]) => {
+          const cell = document.getElementById(`visibleCell_${c}_${r}`);
+          if (!cell) return null;
+          const cr = cell.getBoundingClientRect();
+          return {
+            x: cr.left - stageRect.left + cr.width / 2,
+            y: cr.top - stageRect.top + cr.height / 2
+          };
+        }).filter(Boolean);
+
+        if (pts.length >= 3) {
+          const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+          poly.setAttribute('points', pts.map(p => `${p.x},${p.y}`).join(' '));
+          poly.setAttribute('fill', 'none');
+          poly.setAttribute('stroke', palette[idx % palette.length]);
+          poly.setAttribute('stroke-width', '4.5');
+          poly.setAttribute('stroke-linecap', 'round');
+          poly.setAttribute('stroke-linejoin', 'round');
+          poly.setAttribute('class', 'svg-payline');
+          svg.appendChild(poly);
+
+          // Floating Win Popup badge over middle symbol of the winning line (up to 4 popups so UI stays crisp)
+          if (idx < 4) {
+            const anchor = pts[Math.floor(pts.length / 2)];
+            const badge = document.createElement('div');
+            badge.className = 'line-win-popup absolute px-2.5 py-1 rounded-lg bg-obsidian-950/95 border border-gold-300 shadow-[0_6px_20px_rgba(0,0,0,0.9)] text-[11px] sm:text-xs font-serif font-black text-gold-200 whitespace-nowrap';
+            badge.style.left = `${anchor.x}px`;
+            badge.style.top = `${Math.max(18, anchor.y - 12 + idx * 8)}px`;
+            badge.textContent = `Lijn ${wl.lineNumber}: +${fmt(wl.amount)}`;
+            popupsLayer.appendChild(badge);
+          }
+        }
+      });
+    }
+
+    /* ==========================================================================
+       9. KAST 3: ÉMERAUDE ROYALE 5×4 CASCADING / TUMBLING ENGINE + 10 FREE SPINS
+       ========================================================================== */
+    async function dropCascadeGridInitial(machine, targetGrid) {
+      document.getElementById('paylinesSvgLayer').innerHTML = '';
+      document.getElementById('linePopupsLayer').innerHTML = '';
+      const cellH = getCellHeightPx(machine.rows);
+      state.grid = targetGrid.map(col => [...col]);
+
+      for (let c = 0; c < machine.cols; c++) {
+        const track = document.getElementById(`reelTrack_${c}`);
+        track.style.filter = 'none';
+        track.style.transition = 'none';
+        track.style.transform = 'translate3d(0,0,0)';
+        track.innerHTML = state.grid[c].map((sId, r) => `
+          <div id="visibleCell_${c}_${r}" style="height:${cellH}px; transform:translateY(-${(machine.rows + 1) * cellH}px); opacity:0;" class="flex flex-col items-center justify-center relative">
+            ${createSymbolCellHTML(sId, cellH)}
+          </div>
+        `).join('');
+      }
+
+      // Trigger smooth staggered fall-in from above
+      await wait(25);
+      for (let c = 0; c < machine.cols; c++) {
+        for (let r = machine.rows - 1; r >= 0; r--) {
+          const el = document.getElementById(`visibleCell_${c}_${r}`);
+          const delay = (c * (state.turbo ? 28 : 55)) + ((machine.rows - 1 - r) * (state.turbo ? 18 : 35));
+          el.style.transition = `transform ${state.turbo ? 220 : 360}ms cubic-bezier(0.22, 1.28, 0.36, 1) ${delay}ms, opacity 160ms ease ${delay}ms`;
+          el.style.transform = 'translateY(0px)';
+          el.style.opacity = '1';
+        }
+        setTimeout(() => sfx.reelStopThud(c, state.grid[c].includes(machine.bonusSymbol)), c * (state.turbo ? 45 : 85) + 180);
+      }
+
+      await wait(state.turbo ? 420 : 720);
+    }
+
+    async function runEmeraudeTumbleSequence(machine, targetGrid) {
+      if (!state.inFreeSpins) {
+        state.cascadeStep = 0;
+      }
+      renderMachineFeatureBar();
+
+      await dropCascadeGridInitial(machine, targetGrid);
+
+      let spinTotalWin = 0;
+      let localTumbles = 0;
+
+      // Preserve scatter count from initial drop (or cascades)
+      let maxBonusCount = 0;
+      const countScattersNow = () => {
+        let cnt = 0;
+        for (let c = 0; c < machine.cols; c++) {
+          for (let r = 0; r < machine.rows; r++) {
+            if (state.grid[c][r] === machine.bonusSymbol) cnt++;
+          }
+        }
+        return cnt;
+      };
+      maxBonusCount = Math.max(maxBonusCount, countScattersNow());
+
+      while (true) {
+        const ladder = state.inFreeSpins ? machine.freeSpinsLadder : machine.baseLadder;
+        const multIdx = state.inFreeSpins ? state.stickyMultiplierIdx : state.cascadeStep;
+        const activeMult = ladder[Math.min(multIdx, ladder.length - 1)];
+
+        const evalRes = evaluatePaylines(machine, activeMult);
+        // Only explode payline wins (don't explode bonus scatters during tumbles!)
+        const explodeMap = new Set();
+        evalRes.winningLines.forEach(wl => {
+          wl.coords.forEach(([c, r]) => explodeMap.add(`${c},${r}`));
+        });
+
+        if (explodeMap.size === 0) break;
+
+        // Calculate win from lines on this tumble
+        const stepWin = evalRes.winningLines.reduce((acc, wl) => acc + wl.amount, 0);
+        spinTotalWin += stepWin;
+
+        const explodeCoords = Array.from(explodeMap).map(k => k.split(',').map(Number));
+        renderWinningPaylinesAndPopups(evalRes.winningLines, explodeCoords);
+        sfx.cascadeBell(multIdx);
+
+        document.getElementById('spinWinDisplay').textContent = fmt(spinTotalWin);
+        setTicker(`Cascade Winst (×${activeMult}): +${fmt(stepWin)}!`, true);
+
+        await wait(state.turbo ? 380 : 680);
+
+        // Shatter winning gems with golden explosion
+        document.getElementById('paylinesSvgLayer').innerHTML = '';
+        document.getElementById('linePopupsLayer').innerHTML = '';
+        explodeCoords.forEach(([c, r]) => {
+          const el = document.getElementById(`visibleCell_${c}_${r}`);
+          if (el) {
+            el.classList.remove('winning-symbol-box');
+            el.classList.add('cascade-explode');
+          }
+          state.grid[c][r] = null;
+        });
+
+        await wait(state.turbo ? 240 : 420);
+
+        // Advance Multiplier!
+        localTumbles++;
+        if (state.inFreeSpins) {
+          state.stickyMultiplierIdx = Math.min(state.stickyMultiplierIdx + 1, machine.freeSpinsLadder.length - 1);
+        } else {
+          state.cascadeStep = Math.min(state.cascadeStep + 1, machine.baseLadder.length - 1);
+        }
+        renderMachineFeatureBar();
+
+        // Gravity fall existing upper symbols & drop new symbols from top!
+        const cellH = getCellHeightPx(machine.rows);
+        for (let c = 0; c < machine.cols; c++) {
+          const survivors = [];
+          for (let r = 0; r < machine.rows; r++) {
+            if (state.grid[c][r] !== null) {
+              survivors.push({ sym: state.grid[c][r], oldRow: r });
+            }
+          }
+          const missing = machine.rows - survivors.length;
+          if (missing === 0) continue;
+
+          const newEntries = [];
+          for (let k = 0; k < missing; k++) {
+            // Avoid flooding extra bonus symbols during cascades
+            let nextS = pickSymbol(machine);
+            if (nextS === machine.bonusSymbol) nextS = 'emerald_gem';
+            newEntries.push({ sym: nextS, oldRow: -(missing - k) });
+          }
+
+          const combined = [...newEntries, ...survivors];
+          state.grid[c] = combined.map(item => item.sym);
+
+          const track = document.getElementById(`reelTrack_${c}`);
+          track.innerHTML = combined.map((item, newRow) => {
+            const dropDeltaPx = (newRow - item.oldRow) * cellH;
+            return `
+              <div id="visibleCell_${c}_${newRow}" style="height:${cellH}px; transform:translateY(-${dropDeltaPx}px);" class="flex flex-col items-center justify-center relative">
+                ${createSymbolCellHTML(item.sym, cellH)}
+              </div>
+            `;
+          }).join('');
+        }
+
+        await wait(25);
+        for (let c = 0; c < machine.cols; c++) {
+          for (let r = 0; r < machine.rows; r++) {
+            const el = document.getElementById(`visibleCell_${c}_${r}`);
+            if (el) {
+              el.style.transition = `transform ${state.turbo ? 200 : 330}ms cubic-bezier(0.22, 1.25, 0.36, 1)`;
+              el.style.transform = 'translateY(0px)';
+            }
+          }
+        }
+
+        sfx.reelStopThud(2, false);
+        await wait(state.turbo ? 260 : 430);
+        maxBonusCount = Math.max(maxBonusCount, countScattersNow());
+      }
+
+      return { totalWin: spinTotalWin, triggeredBonus: !state.inFreeSpins && maxBonusCount >= machine.bonusNeed };
+    }
+
+    /**
+     * BONUS GAME 3: 10 ROYAL FREE SPINS WITH NON-RESETTING STICKY MULTIPLIER (UP TO ×25!)
+     */
+    async function runEmeraudeFreeSpinsBonus() {
+      const machine = MACHINES.emeraude;
+      state.inFreeSpins = true;
+      state.freeSpinsTotal = 10;
+      state.freeSpinsLeft = 10;
+      state.stickyMultiplierIdx = 0;
+      state.freeSpinsCumulativeWin = 0;
+
+      const shell = document.getElementById('cabinetShell');
+      shell.className = 'cabinet-shell cabinet-emeraude-freespins p-3 sm:p-5 lg:p-6 border-2 border-gold-300 relative';
+
+      sfx.bonusTriggerFanfare();
+      burstGoldFountain(65);
+      setTicker('★ 10 ROYAL FREE SPINS GEACTIVEERD! De Multiplier zakt NIET meer terug (tot ×25)! ★', true);
+      renderMachineFeatureBar();
+      await wait(1400);
+
+      while (state.freeSpinsLeft > 0) {
+        state.freeSpinsLeft--;
+        renderMachineFeatureBar();
+        const spinNum = state.freeSpinsTotal - state.freeSpinsLeft;
+        const currMult = machine.freeSpinsLadder[state.stickyMultiplierIdx];
+        setTicker(`Royal Free Spin ${spinNum}/10 (Sticky Multiplier ×${currMult}) • Totale Bonus: ${fmt(state.freeSpinsCumulativeWin)}`, true);
+
+        const gridOutcome = buildSpinOutcomeGrid(machine, false);
+        // Prevent scatters during free spins so pure gem cascades dominate
+        for (let c = 0; c < machine.cols; c++) {
+          for (let r = 0; r < machine.rows; r++) {
+            if (gridOutcome[c][r] === machine.bonusSymbol) gridOutcome[c][r] = 'emerald_gem';
+          }
+        }
+
+        const res = await runEmeraudeTumbleSequence(machine, gridOutcome);
+        if (res.totalWin > 0) {
+          state.freeSpinsCumulativeWin += res.totalWin;
+          state.balance += res.totalWin;
+          syncBalanceUI();
+          burstGoldFountain(25);
+        }
+
+        await wait(state.turbo ? 450 : 800);
+      }
+
+      const finalBonusWin = state.freeSpinsCumulativeWin;
+      state.inFreeSpins = false;
+      state.cascadeStep = 0;
+      shell.className = `cabinet-shell ${machine.cabinetClass} p-3 sm:p-5 lg:p-6 border border-gold-400/45 relative`;
+      renderMachineFeatureBar();
+
+      await triggerCelebrationModal(
+        finalBonusWin,
+        'ROYAL FREE SPINS VOLTOOID',
+        `Eindstand met Sticky Multiplier ×${machine.freeSpinsLadder[state.stickyMultiplierIdx]}`
+      );
+    }
+
+    /* ==========================================================================
+       10. BONUS GAME 1: ROYAL HOLD & SPIN JACKPOT BONUS (L'IMPÉRIAL 777)
+       ========================================================================== */
+    function launchHoldAndSpinBonus() {
+      return new Promise(resolve => {
+        const modal = document.getElementById('holdSpinModal');
+        const gridEl = document.getElementById('holdSpinGrid');
+        const respinsEl = document.getElementById('hsRespinsLeft');
+        const potEl = document.getElementById('hsTotalPot');
+        const spinBtn = document.getElementById('hsSpinActionBtn');
+
+        document.getElementById('hsMiniVal').textContent = fmt(state.bet * 30);
+        document.getElementById('hsMajorVal').textContent = fmt(state.bet * 100);
+        document.getElementById('hsGrandVal').textContent = fmt(state.bet * 500);
+
+        sfx.bonusTriggerFanfare();
+
+        // 9 vault slots: null or { mult, tier, label }
+        const cells = Array(9).fill(null);
+
+        function rollCoinPrize() {
+          const r = Math.random();
+          if (r < 0.015) return { mult: 500, tier: 'GRAND', color: 'border-gold-200 bg-gradient-to-b from-amber-500/40 to-obsidian-900 text-gold-100' };
+          if (r < 0.065) return { mult: 100, tier: 'MAJOR', color: 'border-rose-400 bg-rose-950/70 text-rose-200' };
+          if (r < 0.16)  return { mult: 30,  tier: 'MINI',  color: 'border-emerald-400 bg-emerald-950/70 text-emerald-200' };
+          const cashMults = [1, 2, 3, 4, 5, 8, 10, 15, 25];
+          const m = cashMults[Math.floor(Math.random() * cashMults.length)];
+          return { mult: m, tier: null, color: 'border-gold-400 bg-amber-950/50 text-gold-200' };
+        }
+
+        // Seed 3 initial triggering coins
+        [0, 1, 2, 3, 4, 5, 6, 7, 8].sort(() => Math.random() - 0.5).slice(0, 3).forEach(idx => {
+          cells[idx] = rollCoinPrize();
+        });
+
+        let respins = 3;
+        let spinningRespin = false;
+
+        function calcPot() {
+          return cells.reduce((sum, c) => sum + (c ? c.mult * state.bet : 0), 0);
+        }
+
+        function renderHSGrid() {
+          gridEl.innerHTML = '';
+          cells.forEach((coin, i) => {
+            const box = document.createElement('div');
+            box.id = `hsCell_${i}`;
+            if (coin) {
+              box.className = `h-24 sm:h-28 rounded-2xl border-2 ${coin.color} flex flex-col items-center justify-center p-2 shadow-[0_0_20px_rgba(212,175,55,0.35)]`;
+              box.innerHTML = `
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gold-100 via-gold-400 to-gold-600 flex items-center justify-center text-obsidian-950 font-serif font-black text-[10px] shadow">24K</div>
+                ${coin.tier ? `<span class="text-[10px] font-serif font-black tracking-widest mt-1">${coin.tier}</span>` : ''}
+                <span class="font-serif font-extrabold text-xs sm:text-sm text-white tabular-nums mt-0.5">${fmt(coin.mult * state.bet)}</span>
+              `;
+            } else {
+              box.className = 'h-24 sm:h-28 rounded-2xl border border-gold-400/20 bg-obsidian-900/75 flex items-center justify-center text-amber-100/20 font-serif text-xs';
+              box.textContent = '•';
+            }
+            gridEl.appendChild(box);
+          });
+          respinsEl.textContent = respins;
+          potEl.textContent = fmt(calcPot());
+        }
+
+        renderHSGrid();
+        spinBtn.disabled = false;
+        spinBtn.textContent = 'DRAAI RESPIN (3 OVER)';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        async function handleRespinClick() {
+          if (spinningRespin || respins <= 0) return;
+          spinningRespin = true;
+          spinBtn.disabled = true;
+          respins--;
+          respinsEl.textContent = respins;
+          sfx.spinStart();
+
+          // Spin empty cells visually
+          const emptyIndices = cells.map((v, idx) => (v === null ? idx : -1)).filter(idx => idx !== -1);
+          emptyIndices.forEach(idx => {
+            const el = document.getElementById(`hsCell_${idx}`);
+            if (el) {
+              el.innerHTML = `<div class="w-8 h-8 rounded-full border-2 border-gold-300 border-t-transparent animate-spin"></div>`;
+            }
+          });
+
+          await wait(state.turbo ? 420 : 760);
+
+          let landedNew = false;
+          for (const idx of emptyIndices) {
+            // Fun dynamic probability (~26% per empty cell)
+            if (Math.random() < 0.26) {
+              cells[idx] = rollCoinPrize();
+              landedNew = true;
+              sfx.reelStopThud(2, true);
+            } else {
+              sfx.reelTick();
+            }
+          }
+
+          if (landedNew) {
+            respins = 3; // Reset respins!
+          }
+
+          renderHSGrid();
+
+          const allFilled = cells.every(c => c !== null);
+          if (allFilled || respins <= 0) {
+            let finalWin = calcPot();
+            let subMsg = 'Royal Hold & Spin Kluis Uitbetaling';
+            if (allFilled) {
+              finalWin *= 2;
+              subMsg = 'VOL VELD (9/9 MUNTEN) — 2× DUBBELE TOTALE BONUS!';
+            }
+            spinBtn.textContent = 'VOLTOOID!';
+            await wait(900);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            spinBtn.removeEventListener('click', handleRespinClick);
+
+            state.balance += finalWin;
+            syncBalanceUI();
+            document.getElementById('spinWinDisplay').textContent = fmt(finalWin);
+            await triggerCelebrationModal(finalWin, allFilled ? 'GRAND FULL HOUSE 2×' : 'HOLD & SPIN BONUS', subMsg);
+            resolve(finalWin);
+          } else {
+            spinningRespin = false;
+            spinBtn.disabled = false;
+            spinBtn.textContent = `DRAAI RESPIN (${respins} OVER)`;
+          }
+        }
+
+        spinBtn.addEventListener('click', handleRespinClick);
+      });
+    }
+
+    /* ==========================================================================
+       11. BONUS GAME 2: DE GOUDEN KLUIS KRAAK (12 VAULTS PICK & CLICK)
+       ========================================================================== */
+    function launchVaultPickBonus() {
+      return new Promise(resolve => {
+        const modal = document.getElementById('vaultPickModal');
+        const gridEl = document.getElementById('vaultPickGrid');
+        const baseEl = document.getElementById('vpBaseCashEl');
+        const multEl = document.getElementById('vpMultiplierEl');
+        const alarmsEl = document.getElementById('vpAlarmsEl');
+        const totalEl = document.getElementById('vpTotalWinEl');
+        const noteEl = document.getElementById('vpStatusNote');
+
+        sfx.bonusTriggerFanfare();
+
+        // Build deck of 12 hidden armored vaults:
+        // 6 Cash vaults, 2 "+2x Multiplier Diamonds", 1 "Master Key (+15x & Shield)", 3 "Laser Alarms"
+        const deck = [
+          { type: 'cash', mult: 6 },
+          { type: 'cash', mult: 10 },
+          { type: 'cash', mult: 12 },
+          { type: 'cash', mult: 18 },
+          { type: 'cash', mult: 25 },
+          { type: 'cash', mult: 35 },
+          { type: 'diamond', addMult: 2 },
+          { type: 'diamond', addMult: 2 },
+          { type: 'masterkey', mult: 15 },
+          { type: 'alarm' },
+          { type: 'alarm' },
+          { type: 'alarm' }
+        ].sort(() => Math.random() - 0.5);
+
+        let baseCash = state.bet * 4; // Guaranteed VIP entry bonus!
+        let totalMult = 1;
+        let alarms = 0;
+        let masterShields = 0;
+        let ended = false;
+
+        function updateTelemetry() {
+          baseEl.textContent = fmt(baseCash);
+          multEl.textContent = `×${totalMult}`;
+          alarmsEl.textContent = `${alarms} / 2${masterShields > 0 ? ' (+Sleutel Schild)' : ''}`;
+          totalEl.textContent = fmt(baseCash * totalMult);
+        }
+
+        gridEl.innerHTML = '';
+        deck.forEach((item, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'vault-card h-24 sm:h-28 rounded-2xl bg-gradient-to-b from-obsidian-800 to-obsidian-950 border-2 border-gold-400/45 flex flex-col items-center justify-center p-2 relative overflow-hidden';
+          btn.innerHTML = `
+            <div class="w-11 h-11 rounded-full bg-obsidian-900 border-2 border-gold-300 flex items-center justify-center shadow-inner">
+              <div class="w-5 h-5 rounded-full border-2 border-gold-400 border-dashed"></div>
+            </div>
+            <span class="font-serif font-bold text-[10px] tracking-widest text-gold-200 mt-1.5 uppercase">KLUIS #${idx + 1}</span>
+          `;
+
+          btn.addEventListener('click', async () => {
+            if (ended || btn.disabled) return;
+            btn.disabled = true;
+
+            // Guarantee the very first pick is never an alarm for great player feel
+            let prize = item;
+            if (alarms === 0 && baseCash === state.bet * 4 && prize.type === 'alarm') {
+              prize = { type: 'cash', mult: 15 };
+            }
+
+            if (prize.type === 'cash') {
+              const cashVal = prize.mult * state.bet;
+              baseCash += cashVal;
+              sfx.vaultOpenSound(false);
+              btn.className = 'h-24 sm:h-28 rounded-2xl bg-amber-950/60 border-2 border-gold-300 flex flex-col items-center justify-center p-2';
+              btn.innerHTML = `
+                <span class="text-[10px] uppercase tracking-wider text-gold-200 font-bold">GOUDSTAVEN</span>
+                <span class="font-serif font-black text-sm sm:text-base text-white mt-1 tabular-nums">+${fmt(cashVal)}</span>
+              `;
+              noteEl.textContent = `Kluis #${idx + 1} geopend: +${fmt(cashVal)} toegevoegd!`;
+            } else if (prize.type === 'diamond') {
+              totalMult += prize.addMult;
+              sfx.bonusTriggerFanfare();
+              btn.className = 'h-24 sm:h-28 rounded-2xl bg-sky-950/70 border-2 border-sky-300 flex flex-col items-center justify-center p-2 shadow-[0_0_20px_rgba(56,189,248,0.4)]';
+              btn.innerHTML = `
+                <span class="text-[10px] uppercase tracking-wider text-sky-200 font-bold">DIAMANT</span>
+                <span class="font-serif font-black text-lg text-white mt-0.5">+2× MULT!</span>
+              `;
+              noteEl.textContent = `Schitterend! Totale Kluis Vermenigvuldiger verhoogd naar ×${totalMult}!`;
+            } else if (prize.type === 'masterkey') {
+              const keyCash = prize.mult * state.bet;
+              baseCash += keyCash;
+              masterShields++;
+              sfx.bonusTriggerFanfare();
+              btn.className = 'h-24 sm:h-28 rounded-2xl bg-emerald-950/70 border-2 border-emerald-300 flex flex-col items-center justify-center p-2 shadow-[0_0_20px_rgba(52,211,153,0.4)]';
+              btn.innerHTML = `
+                <span class="text-[10px] uppercase tracking-wider text-emerald-300 font-bold">MASTER KEY</span>
+                <span class="font-serif font-black text-xs text-white mt-0.5">+${fmt(keyCash)} &amp; SCHILD</span>
+              `;
+              noteEl.textContent = `MASTER KEY GEVONDEN! +${fmt(keyCash)} én bescherming tegen het volgende Laser Alarm!`;
+            } else if (prize.type === 'alarm') {
+              sfx.vaultOpenSound(true);
+              if (masterShields > 0) {
+                masterShields--;
+                btn.className = 'h-24 sm:h-28 rounded-2xl bg-amber-900/50 border-2 border-amber-400 flex flex-col items-center justify-center p-2';
+                btn.innerHTML = `
+                  <span class="text-[10px] uppercase tracking-wider text-amber-200 font-bold">ONTMANTELD</span>
+                  <span class="text-[11px] text-white mt-1">Master Key gebruikt!</span>
+                `;
+                noteEl.textContent = 'Laser Alarm geneutraliseerd door uw Master Key! Ga veilig door met kraken.';
+              } else {
+                alarms++;
+                btn.className = 'h-24 sm:h-28 rounded-2xl bg-rose-950/80 border-2 border-rose-500 flex flex-col items-center justify-center p-2 shadow-[0_0_22px_rgba(244,63,94,0.5)]';
+                btn.innerHTML = `
+                  <span class="text-[10px] uppercase tracking-widest text-rose-300 font-extrabold">LASER ALARM</span>
+                  <span class="font-serif font-black text-sm text-white mt-1">${alarms} / 2</span>
+                `;
+                noteEl.textContent = alarms === 1
+                  ? 'WAARSCHUWING: 1/2 Laser Alarmen geraakt! Nog één alarm beëindigt de kraak.'
+                  : '2/2 LASER ALARMEN — De kluiskamer vergrendelt! Uw volledige buit wordt nu uitbetaald!';
+              }
+            }
+
+            updateTelemetry();
+
+            const remainingSafe = Array.from(gridEl.children).some(b => !b.disabled);
+            if (alarms >= 2 || !remainingSafe) {
+              ended = true;
+              const finalPayout = baseCash * totalMult;
+              await wait(1150);
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+
+              state.balance += finalPayout;
+              syncBalanceUI();
+              document.getElementById('spinWinDisplay').textContent = fmt(finalPayout);
+              await triggerCelebrationModal(finalPayout, 'KLUIS KRAAK VOLTOOID', `${fmt(baseCash)} buit × ${totalMult} Multiplier`);
+              resolve(finalPayout);
+            }
+          });
+
+          gridEl.appendChild(btn);
+        });
+
+        updateTelemetry();
+        noteEl.textContent = `U start met ${fmt(baseCash)} garantie-inleg. Kies een kluis om te openen!`;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    }
+
+    /* ==========================================================================
+       12. BONUS GAME 4: LE GRAND ROUE D'OR (2-RING INTERACTIVE CANVAS WHEEL)
+       ========================================================================== */
+    const OUTER_RING_SLICES = [
+      { label: '➔ RING II', toInner: true, bg: '#B48811', fg: '#09090B' },
+      { label: '8×', mult: 8, bg: '#3F0713', fg: '#FFF2B2' },
+      { label: '15×', mult: 15, bg: '#090D16', fg: '#FFF2B2' },
+      { label: '➔ RING II', toInner: true, bg: '#B48811', fg: '#09090B' },
+      { label: '10×', mult: 10, bg: '#5C0B1E', fg: '#FFF2B2' },
+      { label: '20×', mult: 20, bg: '#064E3B', fg: '#A7F3D0' },
+      { label: '➔ RING II', toInner: true, bg: '#B48811', fg: '#09090B' },
+      { label: '12×', mult: 12, bg: '#3F0713', fg: '#FFF2B2' },
+      { label: '25×', mult: 25, bg: '#090D16', fg: '#F3D26B' },
+      { label: '➔ RING II', toInner: true, bg: '#B48811', fg: '#09090B' },
+      { label: '10×', mult: 10, bg: '#5C0B1E', fg: '#FFF2B2' },
+      { label: '18×', mult: 18, bg: '#090D16', fg: '#FFF2B2' }
+    ];
+
+    const INNER_RING_SLICES = [
+      { label: 'JACKPOT', isJackpot: true, bg: '#FFF2B2', fg: '#4C0519' },
+      { label: '35×', mult: 35, bg: '#4C0519', fg: '#FFF2B2' },
+      { label: '75×', mult: 75, bg: '#064E3B', fg: '#FFF2B2' },
+      { label: '50×', mult: 50, bg: '#0F172A', fg: '#FFF2B2' },
+      { label: '150×', mult: 150, bg: '#996515', fg: '#FFFFFF' },
+      { label: '40×', mult: 40, bg: '#4C0519', fg: '#FFF2B2' },
+      { label: '100×', mult: 100, bg: '#064E3B', fg: '#FFF2B2' },
+      { label: '50×', mult: 50, bg: '#0F172A', fg: '#FFF2B2' }
+    ];
+
+    function drawDualMonteCarloWheel(outerAngle = 0, innerAngle = 0, activeRing = 1) {
+      const canvas = document.getElementById('grandRoueCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const outerR = 214;
+      const innerR = 128;
+      const hubR = 42;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 24K Gold Rim
+      const rimGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      rimGrad.addColorStop(0, '#FFF8D6');
+      rimGrad.addColorStop(0.5, '#D4AF37');
+      rimGrad.addColorStop(1, '#784B08');
+      ctx.beginPath();
+      ctx.arc(cx, cy, outerR + 11, 0, Math.PI * 2);
+      ctx.fillStyle = rimGrad;
+      ctx.fill();
+
+      // Draw OUTER RING
+      const outStep = (Math.PI * 2) / OUTER_RING_SLICES.length;
+      OUTER_RING_SLICES.forEach((seg, i) => {
+        const a0 = outerAngle + i * outStep - Math.PI / 2 - outStep / 2;
+        const a1 = a0 + outStep;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, outerR, a0, a1);
+        ctx.arc(cx, cy, innerR, a1, a0, true);
+        ctx.closePath();
+        ctx.fillStyle = seg.bg;
+        ctx.fill();
+        ctx.strokeStyle = '#FFF2B2';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Brass Pins along outer edge
+        ctx.beginPath();
+        ctx.arc(cx + Math.cos(a0) * (outerR - 4), cy + Math.sin(a0) * (outerR - 4), 4, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFF8D6';
+        ctx.fill();
+
+        // Label
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(a0 + outStep / 2);
+        ctx.textAlign = 'center';
+        ctx.fillStyle = seg.fg;
+        ctx.font = seg.toInner ? '900 12px Cinzel, serif' : '800 14px Cinzel, serif';
+        ctx.fillText(seg.label, (outerR + innerR) / 2, 5);
+        ctx.restore();
+      });
+
+      // Dim outer ring slightly when Inner Ring II is active!
+      if (activeRing === 2) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+        ctx.arc(cx, cy, innerR, 0, Math.PI * 2, true);
+        ctx.fillStyle = 'rgba(0,0,0,0.52)';
+        ctx.fill();
+      }
+
+      // Gold Divider Ring between Ring I & Ring II
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerR + 3, 0, Math.PI * 2);
+      ctx.strokeStyle = activeRing === 2 ? '#FFFFFF' : '#D4AF37';
+      ctx.lineWidth = activeRing === 2 ? 5 : 3.5;
+      ctx.stroke();
+
+      // Draw INNER RING
+      const inStep = (Math.PI * 2) / INNER_RING_SLICES.length;
+      INNER_RING_SLICES.forEach((seg, i) => {
+        const a0 = innerAngle + i * inStep - Math.PI / 2 - inStep / 2;
+        const a1 = a0 + inStep;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, innerR, a0, a1);
+        ctx.arc(cx, cy, hubR, a1, a0, true);
+        ctx.closePath();
+        ctx.fillStyle = seg.bg;
+        ctx.fill();
+        ctx.strokeStyle = '#FFF2B2';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Inner pins
+        ctx.beginPath();
+        ctx.arc(cx + Math.cos(a0) * (innerR - 4), cy + Math.sin(a0) * (innerR - 4), 3.2, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFF8D6';
+        ctx.fill();
+
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(a0 + inStep / 2);
+        ctx.textAlign = 'center';
+        ctx.fillStyle = seg.fg;
+        ctx.font = seg.isJackpot ? '900 11px Cinzel, serif' : '900 13px Cinzel, serif';
+        ctx.fillText(seg.label, (innerR + hubR) / 2 + 2, 4);
+        ctx.restore();
+      });
+
+      // Center Medallion
+      ctx.beginPath();
+      ctx.arc(cx, cy, hubR, 0, Math.PI * 2);
+      ctx.fillStyle = '#090A0F';
+      ctx.fill();
+      ctx.strokeStyle = '#FFF2B2';
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      ctx.fillStyle = '#FFF2B2';
+      ctx.font = '900 12px Cinzel, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(activeRing === 2 ? 'RING II' : 'RING I', cx, cy + 4);
+    }
+
+    function launchGrandRoueBonus() {
+      return new Promise(resolve => {
+        const modal = document.getElementById('wheelBonusModal');
+        const statusEl = document.getElementById('wheelRingStatusText');
+        const spinBtn = document.getElementById('wheelSpinTriggerBtn');
+        const flapper = document.getElementById('wheelFlapperEl');
+
+        sfx.bonusTriggerFanfare();
+
+        let outerAng = 0;
+        let innerAng = 0;
+        let currentRing = 1;
+        let wheelBusy = false;
+
+        drawDualMonteCarloWheel(outerAng, innerAng, 1);
+        statusEl.innerHTML = `<strong>BUITENRING ACTIEF</strong> — Klik op 'DRAAI HET RAD' voor directe prijzen of stoot door naar de Gouden Binnenring!`;
+        spinBtn.textContent = 'DRAAI BUITENRING';
+        spinBtn.disabled = false;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        async function spinActiveRing() {
+          if (wheelBusy) return;
+          wheelBusy = true;
+          spinBtn.disabled = true;
+
+          const slices = currentRing === 1 ? OUTER_RING_SLICES : INNER_RING_SLICES;
+          const stepAngle = (Math.PI * 2) / slices.length;
+
+          // Choose target slice (weighted so Inner Ring Jackpot is rare & thrilling ~4%, while Ring I -> Ring II is ~40%!)
+          let targetIdx = 0;
+          if (currentRing === 1) {
+            targetIdx = Math.floor(Math.random() * slices.length);
+          } else {
+            const weights = [4, 20, 11, 18, 6, 18, 8, 15]; // Index 0 is Grand Salon Jackpot
+            const sum = weights.reduce((a, b) => a + b, 0);
+            let r = Math.random() * sum;
+            for (let i = 0; i < weights.length; i++) {
+              r -= weights[i];
+              if (r <= 0) {
+                targetIdx = i;
+                break;
+              }
+            }
+          }
+
+          const startAngle = currentRing === 1 ? outerAng : innerAng;
+          const desiredMod = (Math.PI * 2 - targetIdx * stepAngle) % (Math.PI * 2);
+          const fullTurns = (6 + Math.floor(Math.random() * 2)) * Math.PI * 2;
+          const delta = fullTurns + ((desiredMod - (startAngle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2));
+
+          const dur = state.turbo ? 2800 : 4600;
+          const t0 = performance.now();
+          let lastPinIdx = -1;
+
+          await new Promise(resAnim => {
+            function frame(now) {
+              const p = Math.min(1, (now - t0) / dur);
+              // Realistic wheel friction deceleration curve
+              const ease = 1 - Math.pow(1 - p, 4);
+              const cur = startAngle + delta * ease;
+
+              if (currentRing === 1) outerAng = cur;
+              else innerAng = cur;
+
+              drawDualMonteCarloWheel(outerAng, innerAng, currentRing);
+
+              // Pin rattle sound & top flapper kick!
+              const pinIdx = Math.floor((cur + stepAngle / 2) / stepAngle);
+              if (pinIdx !== lastPinIdx) {
+                lastPinIdx = pinIdx;
+                sfx.wheelPinRattle();
+                flapper.style.transform = 'translateX(-50%) rotate(-22deg)';
+                setTimeout(() => {
+                  flapper.style.transform = 'translateX(-50%) rotate(0deg)';
+                }, 55);
+              }
+
+              if (p < 1) requestAnimationFrame(frame);
+              else resAnim();
+            }
+            requestAnimationFrame(frame);
+          });
+
+          const wonSlice = slices[targetIdx];
+
+          if (currentRing === 1 && wonSlice.toInner) {
+            // Advance to Ring II!
+            currentRing = 2;
+            sfx.bonusTriggerFanfare();
+            burstGoldFountain(55);
+            drawDualMonteCarloWheel(outerAng, innerAng, 2);
+            statusEl.innerHTML = `<span class="text-gold-200 font-bold">★ GOUDEN BINNENRING ONTGRENDELD! ★</span> Draai nu voor Mega Multipliers (tot 150×) of de <strong>GRAND SALON JACKPOT</strong>!`;
+            spinBtn.textContent = 'DRAAI GOUDEN BINNENRING';
+            spinBtn.disabled = false;
+            wheelBusy = false;
+            return;
+          }
+
+          // Calculate Final Wheel Payout
+          let wheelWin = 0;
+          let winTitle = "LE GRAND ROUE D'OR";
+          let winSub = `Gewonnen op Ring ${currentRing === 2 ? 'II' : 'I'}: ${wonSlice.label}`;
+
+          if (wonSlice.isJackpot) {
+            wheelWin = state.grandJackpot;
+            state.grandJackpot = 125480.50; // Reset seed
+            document.getElementById('progressiveJackpotEl').textContent = fmt(state.grandJackpot);
+            winTitle = 'GRAND SALON JACKPOT!';
+            winSub = 'De hoogste prijs van Maison d\'Or Monte Carlo!';
+          } else {
+            wheelWin = state.bet * wonSlice.mult;
+          }
+
+          await wait(950);
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          spinBtn.removeEventListener('click', spinActiveRing);
+
+          state.balance += wheelWin;
+          syncBalanceUI();
+          document.getElementById('spinWinDisplay').textContent = fmt(wheelWin);
+          await triggerCelebrationModal(wheelWin, winTitle, winSub);
+          resolve(wheelWin);
+        }
+
+        spinBtn.addEventListener('click', spinActiveRing);
+      });
+    }
+
+    /* ==========================================================================
+       13. BIG / MEGA / SENSATIONAL WIN CELEBRATION MODAL
+       ========================================================================== */
+    function triggerCelebrationModal(amount, customBadge = null, customSub = null) {
+      return new Promise(resolve => {
+        if (amount <= 0) {
+          resolve();
+          return;
+        }
+        const ratio = amount / state.bet;
+        let tier = customBadge || 'BIG WIN';
+        let headline = 'MAGNIFIQUE!';
+        if (!customBadge) {
+          if (ratio >= 75) {
+            tier = 'SENSATIONAL WIN';
+            headline = 'IMPÉRIAL!';
+          } else if (ratio >= 35) {
+            tier = 'MEGA WIN';
+            headline = 'EXTRAORDINAIRE!';
+          }
+        }
+
+        sfx.bigWinFanfare();
+        burstGoldFountain(120);
+
+        const modal = document.getElementById('celebrationWinModal');
+        const badgeEl = document.getElementById('winTierBadge');
+        const headEl = document.getElementById('winHeadlineEl');
+        const subEl = document.getElementById('winSubtextEl');
+        const amtEl = document.getElementById('winRollupAmount');
+        const btn = document.getElementById('collectWinModalBtn');
+
+        badgeEl.textContent = tier;
+        headEl.textContent = headline;
+        subEl.textContent = customSub || `${ (amount / state.bet).toFixed(1) }× uw inzet gewonnen in Salon Privé`;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        let closed = false;
+        const t0 = performance.now();
+        const dur = 1600;
+
+        function roll(now) {
+          if (closed) return;
+          const p = Math.min(1, (now - t0) / dur);
+          const ease = 1 - Math.pow(1 - p, 3);
+          amtEl.textContent = fmt(amount * ease);
+          if (p < 1) requestAnimationFrame(roll);
+          else amtEl.textContent = fmt(amount);
+        }
+        requestAnimationFrame(roll);
+
+        function close() {
+          if (closed) return;
+          closed = true;
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          btn.removeEventListener('click', close);
+          resolve();
+        }
+
+        btn.addEventListener('click', close);
+
+        if (state.autoplayLeft > 0) {
+          setTimeout(close, 2500);
+        }
+      });
+    }
+
+    /* ==========================================================================
+       14. MASTER SPIN & BUY BONUS EXECUTION (100% LOCK-SAFE)
+       ========================================================================== */
+    function setUIBusy(isBusy) {
+      state.busy = isBusy;
+      document.getElementById('spinMainBtn').disabled = isBusy;
+      document.getElementById('buyBonusBtn').disabled = isBusy;
+      document.getElementById('backToLobbyBtn').disabled = isBusy;
+      document.querySelectorAll('.bet-opt-btn').forEach(b => (b.disabled = isBusy));
+      document.querySelectorAll('.quick-machine-tab').forEach(t => {
+        t.style.opacity = isBusy ? '0.55' : '1';
+        t.style.pointerEvents = isBusy ? 'none' : 'auto';
+      });
+    }
+
+    async function launchBonusForCurrentMachine() {
+      const m = MACHINES[state.machineId];
+      if (m.id === 'imperial') {
+        await launchHoldAndSpinBonus();
+      } else if (m.id === 'obsidian') {
+        await launchVaultPickBonus();
+      } else if (m.id === 'emeraude') {
+        await runEmeraudeFreeSpinsBonus();
+      } else if (m.id === 'palais') {
+        await launchGrandRoueBonus();
+      }
+    }
+
+    async function playRound(isBonusBuy = false) {
+      if (state.busy || state.view !== 'game') return;
+
+      const machine = MACHINES[state.machineId];
+      const cost = isBonusBuy ? state.bet * 50 : state.bet;
+
+      if (state.balance < cost) {
+        stopAutoplay();
+        setTicker(`Onvoldoende VIP Saldo voor ${isBonusBuy ? 'Koop Bonus' : 'deze inzet'}. Haal gratis VIP-chips op in Caisse Privée!`, true);
+        openCaisseModal();
+        return;
+      }
+
+      setUIBusy(true);
+      document.getElementById('spinWinDisplay').textContent = fmt(0);
+
+      // Deduct wager & feed 2% into Progressive Grand Salon Jackpot
+      state.balance -= cost;
+      state.grandJackpot += cost * 0.02;
+      syncBalanceUI();
+      document.getElementById('progressiveJackpotEl').textContent = fmt(state.grandJackpot);
+
+      sfx.spinStart();
+      setTicker(isBonusBuy ? `★ KOOP BONUS GEACTIVEERD — Rollen zoeken 3+ Bonus-symbolen... ★` : 'De rollen draaien...');
+
+      const outcomeGrid = buildSpinOutcomeGrid(machine, isBonusBuy);
+
+      if (machine.mode === 'cascade') {
+        const casRes = await runEmeraudeTumbleSequence(machine, outcomeGrid);
+        if (casRes.totalWin > 0) {
+          state.balance += casRes.totalWin;
+          syncBalanceUI();
+          document.getElementById('spinWinDisplay').textContent = fmt(casRes.totalWin);
+          if (casRes.totalWin >= state.bet * 15 && !casRes.triggeredBonus) {
+            await triggerCelebrationModal(casRes.totalWin);
+          } else {
+            burstGoldFountain(25);
+            setTicker(`Tumble Winst: ${fmt(casRes.totalWin)}!`, true);
+          }
+        } else if (!casRes.triggeredBonus) {
+          setTicker('Geen winnende edelsteen-combinatie. Probeer nog een draai.');
+        }
+
+        if (casRes.triggeredBonus) {
+          await wait(500);
+          await launchBonusForCurrentMachine();
+        }
+      } else {
+        // True Vertical Reel Strip Machines (Kast 1, 2 & 4)
+        await spinReelStrips(machine, outcomeGrid);
+        await applyObsidianExpandingWilds(machine);
+
+        const evalRes = evaluatePaylines(machine, 1);
+
+        if (evalRes.winningCoords.length > 0) {
+          renderWinningPaylinesAndPopups(evalRes.winningLines, evalRes.winningCoords);
+        }
+
+        if (evalRes.totalWin > 0) {
+          state.balance += evalRes.totalWin;
+          syncBalanceUI();
+          document.getElementById('spinWinDisplay').textContent = fmt(evalRes.totalWin);
+          sfx.lineWinChime();
+
+          if (evalRes.totalWin >= state.bet * 15 && evalRes.bonusCount < machine.bonusNeed) {
+            await triggerCelebrationModal(evalRes.totalWin);
+          } else {
+            burstGoldFountain(28);
+            setTicker(`Magnifique! U wint ${fmt(evalRes.totalWin)} op ${evalRes.winningLines.length || 1} winlijn(en)!`, true);
+          }
+        } else if (evalRes.bonusCount < machine.bonusNeed) {
+          setTicker('Geen winnende lijn. Druk op SPIN voor een nieuwe kans.');
+        }
+
+        // Trigger Interactive Bonus Game if 3+ Bonus Symbols landed!
+        if (evalRes.bonusCount >= machine.bonusNeed) {
+          evalRes.bonusCoords.forEach(([c, r]) => {
+            const el = document.getElementById(`visibleCell_${c}_${r}`);
+            if (el) el.classList.add('winning-symbol-box');
+          });
+          setTicker(`★ BONUS GAME GEACTIVEERD: ${machine.bonusName}! ★`, true);
+          await wait(850);
+          await launchBonusForCurrentMachine();
+        }
+      }
+
+      setUIBusy(false);
+
+      // Continue Autoplay if active
+      if (state.autoplayLeft > 0) {
+        state.autoplayLeft--;
+        updateAutoplayUI();
+        if (state.autoplayLeft > 0) {
+          await wait(state.turbo ? 350 : 780);
+          if (state.autoplayLeft > 0 && !state.busy) {
+            playRound(false);
+          }
+        } else {
+          stopAutoplay();
+        }
+      }
+    }
+
+    /* ==========================================================================
+       15. CONTROLS, BET PILLS, AUTOPLAY & MODALS SETUP
+       ========================================================================== */
+    function renderBetButtons() {
+      const row = document.getElementById('betPillsRow');
+      row.innerHTML = '';
+      BET_OPTIONS.forEach(b => {
+        const btn = document.createElement('button');
+        btn.dataset.bet = b;
+        btn.className = 'bet-opt-btn py-2 rounded-lg text-[11px] sm:text-xs font-extrabold transition border';
+        btn.textContent = `€${b}`;
+        btn.addEventListener('click', () => {
+          if (state.busy) return;
+          state.bet = b;
+          sfx.reelTick();
+          updateBetUI();
+          renderMachineFeatureBar();
+        });
+        row.appendChild(btn);
+      });
+      updateBetUI();
+    }
+
+    function updateBetUI() {
+      document.getElementById('activeBetLabel').textContent = fmt(state.bet);
+      document.getElementById('buyBonusCostEl').textContent = fmt(state.bet * 50);
+      document.querySelectorAll('.bet-opt-btn').forEach(btn => {
+        const active = parseInt(btn.dataset.bet, 10) === state.bet;
+        btn.className = active
+          ? 'bet-opt-btn py-2 rounded-lg text-[11px] sm:text-xs font-extrabold border border-gold-200 bg-gold-400 text-obsidian-950 shadow-md transition'
+          : 'bet-opt-btn py-2 rounded-lg text-[11px] sm:text-xs font-bold border border-gold-400/25 bg-obsidian-900 text-amber-100/80 hover:border-gold-300 transition';
+      });
+    }
+
+    function updateAutoplayUI() {
+      const stopBtn = document.getElementById('autoStopBtn');
+      const countSpan = document.getElementById('autoRemainingCount');
+      const startBtns = document.querySelectorAll('.auto-btn');
+
+      if (state.autoplayLeft > 0) {
+        stopBtn.classList.remove('hidden');
+        countSpan.textContent = state.autoplayLeft;
+        startBtns.forEach(b => b.classList.add('hidden'));
+      } else {
+        stopBtn.classList.add('hidden');
+        startBtns.forEach(b => b.classList.remove('hidden'));
+      }
+    }
+
+    function stopAutoplay() {
+      state.autoplayLeft = 0;
+      updateAutoplayUI();
+    }
+
+    function openCaisseModal() {
+      document.getElementById('caisseToast').classList.add('hidden');
+      const m = document.getElementById('caisseModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function openPaytableModal() {
+      const m = MACHINES[state.machineId];
+      document.getElementById('ptModalTitle').textContent = `${m.title} — Uitbetalingstabel`;
+      document.getElementById('ptModalDesc').textContent = m.lobbyDesc;
+      document.getElementById('ptBonusFeatureBox').innerHTML = m.rulesHtml;
+
+      const symGrid = document.getElementById('ptSymbolsGrid');
+      symGrid.innerHTML = '';
+
+      m.symbols.forEach(sId => {
+        const sym = SYMBOLS[sId];
+        const pMap = m.paytable[sId] || {};
+        const tiers = Object.entries(pMap)
+          .map(([cnt, mult]) => `${cnt}×: <strong class="text-gold-200">${fmt(state.bet * mult)}</strong>`)
+          .join(' &nbsp;•&nbsp; ');
+
+        const card = document.createElement('div');
+        card.className = 'p-3 rounded-2xl bg-obsidian-950 border border-gold-400/25 flex items-center gap-3.5';
+        card.innerHTML = `
+          <div class="shrink-0">${sym.svg}</div>
+          <div class="min-w-0">
+            <div class="font-serif font-bold text-xs sm:text-sm text-amber-50 truncate">${sym.name}</div>
+            <div class="text-[11px] sm:text-xs text-amber-100/75 mt-1 tabular-nums">${tiers}</div>
+          </div>
+        `;
+        symGrid.appendChild(card);
+      });
+
+      const modal = document.getElementById('paytableModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    /* ==========================================================================
+       16. INITIALIZATION & GLOBAL EVENT BINDINGS
+       ========================================================================== */
+    window.onload = function () {
+      syncBalanceUI(true);
+      document.getElementById('progressiveJackpotEl').textContent = fmt(state.grandJackpot);
+      renderLobbyAndQuickBar();
+      renderBetButtons();
+
+      // Live Ticking Progressive Grand Salon Jackpot
+      setInterval(() => {
+        state.grandJackpot += 0.11 + Math.random() * 0.28;
+        document.getElementById('progressiveJackpotEl').textContent = fmt(state.grandJackpot);
+      }, 1250);
+
+      // Navigation: Back to Salon Lobby
+      document.getElementById('backToLobbyBtn').addEventListener('click', showLobby);
+
+      // Spin & Buy Bonus Actions
+      document.getElementById('spinMainBtn').addEventListener('click', () => playRound(false));
+      document.getElementById('buyBonusBtn').addEventListener('click', () => {
+        stopAutoplay();
+        playRound(true);
+      });
+
+      // Spacebar Support (Strictly blocked when busy or when any modal is open)
+      window.addEventListener('keydown', e => {
+        if (e.code === 'Space' && state.view === 'game') {
+          const anyModalOpen = ['holdSpinModal', 'vaultPickModal', 'wheelBonusModal', 'celebrationWinModal', 'caisseModal', 'paytableModal']
+            .some(id => !document.getElementById(id).classList.contains('hidden'));
+          if (!anyModalOpen && !state.busy) {
+            e.preventDefault();
+            playRound(false);
+          }
+        }
+      });
+
+      // Turbo Toggle
+      document.getElementById('turboToggleBtn').addEventListener('click', e => {
+        state.turbo = !state.turbo;
+        const b = e.currentTarget;
+        b.classList.toggle('border-gold-200', state.turbo);
+        b.classList.toggle('bg-gold-400/25', state.turbo);
+        b.classList.toggle('text-gold-100', state.turbo);
+        sfx.reelTick();
+      });
+
+      // Autoplay Buttons
+      document.querySelectorAll('.auto-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (state.busy) return;
+          state.autoplayLeft = parseInt(btn.dataset.auto, 10);
+          updateAutoplayUI();
+          playRound(false);
+        });
+      });
+      document.getElementById('autoStopBtn').addEventListener('click', stopAutoplay);
+
+      // Audio Toggle
+      document.getElementById('audioToggleBtn').addEventListener('click', () => {
+        sfx.enabled = !sfx.enabled;
+        document.getElementById('iconSoundOn').classList.toggle('hidden', !sfx.enabled);
+        document.getElementById('iconSoundOff').classList.toggle('hidden', sfx.enabled);
+      });
+
+      // Caisse Privée Modal
+      document.getElementById('openCaisseBtn').addEventListener('click', openCaisseModal);
+      document.getElementById('closeCaisseBtn').addEventListener('click', () => {
+        document.getElementById('caisseModal').classList.add('hidden');
+        document.getElementById('caisseModal').classList.remove('flex');
+      });
+
+      document.querySelectorAll('.caisse-chip-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const add = parseFloat(btn.dataset.chip);
+          state.balance += add;
+          syncBalanceUI();
+          sfx.lineWinChime();
+          burstGoldFountain(40);
+
+          const toast = document.getElementById('caisseToast');
+          toast.textContent = `+ ${fmt(add)} toegevoegd aan uw VIP Saldo!`;
+          toast.classList.remove('hidden');
+          setTimeout(() => {
+            document.getElementById('caisseModal').classList.add('hidden');
+            document.getElementById('caisseModal').classList.remove('flex');
+          }, 900);
+        });
+      });
+
+      // Paytable Modal
+      document.getElementById('paytableOpenBtn').addEventListener('click', openPaytableModal);
+      document.getElementById('closePaytableBtn').addEventListener('click', () => {
+        document.getElementById('paytableModal').classList.add('hidden');
+        document.getElementById('paytableModal').classList.remove('flex');
+      });
+
+      // Responsive Stage Remount when idle
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (state.view === 'game' && !state.busy) {
+            mountStageGrid(MACHINES[state.machineId]);
+          }
+        }, 180);
+      });
+    };
+  </script>
+</body>
+</html>
